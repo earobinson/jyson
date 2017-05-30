@@ -1,0 +1,33 @@
+{
+  "name": "@hubba/jyson",
+  "version": "1.0.2",
+  "description": "A template engine for json.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec --recursive \"./**/*.spec.js\"",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubba/jyson.git"
+  },
+  "keywords": [
+    "json",
+    "template"
+  ],
+  "author": "Edward Andrew Robinson <earobinson@hubba.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hubba/jyson/issues"
+  },
+  "homepage": "https://github.com/hubba/jyson#readme",
+  "devDependencies": {
+    "chai": "^4.0.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.4.2",
+    "q": "^1.5.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
