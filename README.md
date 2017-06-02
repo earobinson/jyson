@@ -2,14 +2,14 @@
 
 This package lets you generate fast json templates for your apis. It lets you quickly build powerful api templates.
 
-## Usage
+## Install
 ```bash
 npm install @hubba/jyson --save
 ```
 
 ## Usage
 
-jyson can create many different types of templates, for a full list of examples check out the [tests](https://github.com/hubba/jyson/blob/master/lib/jyson.spec.js).
+jyson can create many different types of templates, for a full list of examples check out the [example tests](https://github.com/hubba/jyson/blob/master/spec/lib/jyson/jyson.example.spec.js).
 
 ```js
 const jyson = require('@hubba/jyson');
@@ -19,7 +19,8 @@ productTemplateFunction = jyson.buildTemplateFunction({
   tags: ['meta.tags.$'],
   other: {
     dogRating: 'meta.rating',
-    exampleMissingValue: 'notFound'
+    exampleMissingValue: 'notFound',
+    dateRan: ({opts}) => opts.dateRan
   },
 });
 
@@ -33,10 +34,10 @@ const input = {
       'lactobacillus acidophilus',
       'bifidobacterium bifidum',
       'lactobacillus casei'
-    ]
+    ],
   }
 
-productTemplateFunction([input]);
+productTemplateFunction([input], {dateRan: 1496351371149}));
 // => [{
 //  name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
 //  tags:[
@@ -48,11 +49,17 @@ productTemplateFunction([input]);
 //  ],
 //  other: {
 //    dogRating: 10,
-//    exampleMissingValue: null
+//    exampleMissingValue: null,
+//    dateRan: 1496351371149
 //  }
 //}]
 ```
 
+## Goals
+ - Easy to install
+ - Easy to understand
+ - Make jyson part of the common lexicon
+
 ***
 
-Built with ❤️ at [Hubba](www.hubba.com).
+Built with ❤️ at [Hubba](https://www.hubba.com?utm_campaign=hubba_oss).
