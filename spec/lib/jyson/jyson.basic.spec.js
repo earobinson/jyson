@@ -102,4 +102,32 @@ describe('jyson.basic.spec: a basic template', () => {
         {a:{a:null}, b:{b: null}, c:{c: 3}}
     ]);
   });
+
+  it('must convert an object with properties "json"', () => {
+    const input = {};
+    Object.defineProperty(input, 'a', {
+      get: function() { return 1; },
+      set: function() { },
+      enumerable: true,
+      configurable: false
+    });
+    Object.defineProperty(input, 'b', {
+      get: function() { return 2; },
+      set: function() { },
+      enumerable: true,
+      configurable: false
+    });
+    Object.defineProperty(input, 'c', {
+      get: function() { return 3; },
+      set: function() {  },
+      enumerable: true,
+      configurable: false
+    });
+
+    const json = this.templateFunction(input);
+
+    expect(json.a).to.equal(1);
+    expect(json.b).to.equal(2);
+    expect(json.c).to.equal(3);
+  });
 });
