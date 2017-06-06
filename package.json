@@ -1,6 +1,6 @@
 {
-  "name": "@hubba/jyson",
-  "version": "1.0.2",
+  "name": "jyson",
+  "version": "1.0.5",
   "description": "A template engine for json.",
   "main": "index.js",
   "scripts": {
