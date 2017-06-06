@@ -2,9 +2,14 @@
 
 This package lets you generate fast json templates for your apis. It lets you quickly build powerful api templates.
 
+[![Build Status](https://api.travis-ci.org/hubba/jyson.svg?branch=master)](https://travis-ci.org/hubba/jyson)
+[![npm version](https://badge.fury.io/js/jyson.svg)](https://badge.fury.io/js/jyson)
+[![Dependency Status](https://gemnasium.com/badges/github.com/hubba/jyson.svg)](https://gemnasium.com/github.com/hubba/jyson)
+
+
 ## Install
 ```bash
-npm install @hubba/jyson --save
+npm install jyson --save
 ```
 
 ## Usage
@@ -12,7 +17,7 @@ npm install @hubba/jyson --save
 jyson can create many different types of templates, for a full list of examples check out the [example tests](https://github.com/hubba/jyson/blob/master/spec/lib/jyson/jyson.example.spec.js).
 
 ```js
-const jyson = require('@hubba/jyson');
+const jyson = require('jyson');
 
 productTemplateFunction = jyson.buildTemplateFunction({
   name: 'name',
