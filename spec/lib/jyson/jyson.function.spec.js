@@ -57,6 +57,33 @@ describe('jyson.function.spec: a function in the template', () => {
     });
   });
 
+  describe('simple undefined functions', () => {
+      beforeEach(() =>{
+          this.templateFunction = jyson.buildTemplateFunction({
+              a: () => 1,
+              b: () => {
+                  return;
+              },
+              c: function() {
+                  return;
+              }
+          });
+      });
+
+      it('must convert an object to "json"', () => {
+          const input = {
+              a: 0,
+              b: 0,
+              c: 0
+          };
+          const json = this.templateFunction(input);
+
+          expect(json).to.have.all.keys('a');
+          expect(json.a).to.equal(1);
+
+      });
+  });
+
   describe('nested comments via functions', () => {
     beforeEach(() =>{
       this.templateFunction = jyson.buildTemplateFunction({
