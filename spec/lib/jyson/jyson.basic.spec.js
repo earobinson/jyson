@@ -1,4 +1,5 @@
 const Q = require('q');
+const assert = require('assert');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -62,7 +63,7 @@ describe('jyson.basic.spec: a basic template', () => {
       return Q.reject('an error should have been thrown');
     })
     .catch(error => {
-      expect(error.name).to.equal('AssertionError');
+      expect(error).to.be.an.instanceOf(assert.AssertionError);
       expect(error.message).to.equal('jyson encountered an array when it was not expecting one: a');
     });
   });

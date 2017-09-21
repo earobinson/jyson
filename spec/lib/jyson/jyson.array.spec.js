@@ -16,7 +16,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('simple arrays', () => {
-      it('must convert an object to "json"', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [1],
           b: [2, 3],
@@ -34,7 +34,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('complex arrays', () => {
-      it('must convert an object to "json"', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [1],
           b: [2, 3],
@@ -68,7 +68,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
 
       describe('simple arrays', () => {
-        it('must convert an object to "json"', () => {
+        it('must convert an object to json', () => {
           const input = {
             a: [
               {
@@ -92,7 +92,7 @@ describe('jyson.array.spec: an array in the template', () => {
           expect(json.a[1].c).to.equal('a1c');
         });
 
-        it('must handel undefined values an object to "json"', () => {
+        it('must handel undefined values an object to json', () => {
           const input = {
             a: [
               {
@@ -115,7 +115,7 @@ describe('jyson.array.spec: an array in the template', () => {
           expect(json.a[1].c).to.equal('a1c');
         });
 
-        it('must convert an object of length 10 to "json"', () => {
+        it('must convert an object of length 10 to json', () => {
           const input = {
             a: [
               {
@@ -168,6 +168,61 @@ describe('jyson.array.spec: an array in the template', () => {
             expect(json.a[ii].b).to.equal(`a${ii}b`);
             expect(json.a[ii].c).to.equal(`a${ii}c`);
           }
+        });
+      });
+    });
+
+    describe('simple arrays', () => {
+      beforeEach(() =>{
+        this.templateFunction = jyson.buildTemplateFunction({
+          a: [{
+            b: {
+              c: 'a.$.b.c'
+            }
+          }]
+        });
+      });
+
+      describe('complex arrays', () => {
+        it('must convert an object to json of length one', () => {
+          const input = {
+            a: [
+              {
+                b: {
+                  c: 'easy as 123',
+                  d: 'do ray me'
+                }
+              }
+            ],
+          };
+          const json = this.templateFunction(input);
+          expect(json.a.length).to.equal(1);
+          expect(json.a[0].b.c).to.equal('easy as 123');
+          expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
+        });
+
+        it('must convert an object to json of length two', () => {
+          const input = {
+            a: [
+              {
+                b: {
+                  c: 'easy as 123',
+                  d: 'do ray me'
+                }
+              }, {
+                b: {
+                  c: 'EASY AS 123',
+                  d: 'do ray me'
+                }
+              }
+            ],
+          };
+          const json = this.templateFunction(input);
+          expect(json.a.length).to.equal(2);
+          expect(json.a[0].b.c).to.equal('easy as 123');
+          expect(json.a[1].b.c).to.equal('EASY AS 123');
+          expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
+          expect(Object.keys(json.a[1].b)).to.have.ordered.members(['c']);
         });
       });
     });
