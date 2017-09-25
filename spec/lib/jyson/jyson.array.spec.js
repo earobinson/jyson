@@ -92,7 +92,7 @@ describe('jyson.array.spec: an array in the template', () => {
           expect(json.a[1].c).to.equal('a1c');
         });
 
-        it('must handel undefined values an object to json', () => {
+        it('must handel undefined values when converting an object to json', () => {
           const input = {
             a: [
               {
