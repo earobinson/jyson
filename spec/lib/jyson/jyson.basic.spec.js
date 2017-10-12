@@ -1,4 +1,5 @@
 const Q = require('q');
+const assert = require('assert');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -62,23 +63,23 @@ describe('jyson.basic.spec: a basic template', () => {
       return Q.reject('an error should have been thrown');
     })
     .catch(error => {
-      expect(error.name).to.equal('AssertionError');
+      expect(error).to.be.an.instanceOf(assert.AssertionError);
       expect(error.message).to.equal('jyson encountered an array when it was not expecting one: a');
     });
   });
 
   it('must convert arrays "json"', () => {
     const input = [
-        {a:1},
-        {b:2},
-        {c:3}
+      {a:1},
+      {b:2},
+      {c:3}
     ];
     const json = this.templateFunction(input);
 
     expect(json).to.deep.equal([
-        {a:1, b:null, c:null},
-        {a:null, b:2, c:null},
-        {a:null, b:null, c:3}
+      {a:1, b:null, c:null},
+      {a:null, b:2, c:null},
+      {a:null, b:null, c:3}
     ]);
   });
 
@@ -90,16 +91,16 @@ describe('jyson.basic.spec: a basic template', () => {
     });
 
     const input = [
-        {a:{a: 1}},
-        {b:{b: 2}},
-        {c:{c: 3}}
+      {a:{a: 1}},
+      {b:{b: 2}},
+      {c:{c: 3}}
     ];
     const json = this.templateFunction(input);
 
     expect(json).to.deep.equal([
-        {a:{a:1}, b:{b: null}, c:{c: null}},
-        {a:{a:null}, b:{b: 2}, c:{c: null}},
-        {a:{a:null}, b:{b: null}, c:{c: 3}}
+      {a:{a:1}, b:{b: null}, c:{c: null}},
+      {a:{a:null}, b:{b: 2}, c:{c: null}},
+      {a:{a:null}, b:{b: null}, c:{c: 3}}
     ]);
   });
 

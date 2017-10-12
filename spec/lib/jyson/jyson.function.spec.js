@@ -52,7 +52,7 @@ describe('jyson.function.spec: a function in the template', () => {
       expect(this.templateValueFunction).to.have.been.calledWith({
         key: 'a',
         object: { a: 0 },
-        opts: {}
+        opts: { arrayIndex: { $: 0 } }
       });
     });
   });
