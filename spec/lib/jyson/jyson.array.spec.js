@@ -31,6 +31,19 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(json.c).to.have.ordered.members(input.c);
         expect(json.c).to.have.lengthOf(input.c.length);
       });
+
+      it('must convert an object to json when the array is not provided', () => {
+        const input = {
+        };
+        const json = this.templateFunction(input);
+
+        expect(json.a).to.deep.equal([]);
+        expect(json.a).to.have.lengthOf(0);
+        expect(json.b).to.deep.equal([]);
+        expect(json.b).to.have.lengthOf(0);
+        expect(json.c).to.deep.equal([]);
+        expect(json.c).to.have.lengthOf(0);
+      });
     });
 
     describe('complex arrays', () => {
