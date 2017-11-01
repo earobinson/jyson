@@ -26,7 +26,7 @@ productTemplateFunction = jyson.buildTemplateFunction({
     dogRating: 'meta.rating',
     exampleMissingValue: 'notFound',
     dateRan: ({opts}) => opts.dateRan
-  },
+  }
 });
 
 const input = {
@@ -42,7 +42,7 @@ const input = {
     ],
   }
 
-productTemplateFunction([input], {dateRan: 1496351371149}));
+productTemplateFunction([input], {dateRan: 1496351371149});
 // => [{
 //  name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
 //  tags:[
