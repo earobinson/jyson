@@ -3,6 +3,7 @@
 This package lets you generate fast json templates for your apis. It lets you quickly build powerful api templates.
 
 [![Build Status](https://api.travis-ci.org/hubba/jyson.svg?branch=master)](https://travis-ci.org/hubba/jyson)
+[![Coveralls](https://img.shields.io/coveralls/github/hubba/jyson.svg)](https://coveralls.io/github/hubba/jyson)
 [![npm version](https://badge.fury.io/js/jyson.svg)](https://badge.fury.io/js/jyson)
 [![Dependency Status](https://gemnasium.com/badges/github.com/hubba/jyson.svg)](https://gemnasium.com/github.com/hubba/jyson)
 
