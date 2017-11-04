@@ -6,7 +6,9 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\"",
     "test:watch": "npm test -- --watch",
-    "lint": "./node_modules/.bin/eslint ./**/*.js"
+    "test:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm test",
+    "test:lint": "./node_modules/.bin/eslint ./**/*.js",
+    "report:coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,10 @@
   "homepage": "https://github.com/hubba/jyson#readme",
   "devDependencies": {
     "chai": "^4.0.0",
+    "coveralls": "^3.0.0",
     "eslint": "^4.4.1",
     "mocha": "^3.4.2",
+    "nyc": "^11.3.0",
     "q": "^1.5.0",
     "sinon": "^3.2.1",
     "sinon-chai": "^2.10.0"
