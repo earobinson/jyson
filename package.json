@@ -6,8 +6,8 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\"",
     "test:watch": "npm test -- --watch",
+    "test:lint": "./node_modules/.bin/eslint .",
     "test:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm test",
-    "test:lint": "./node_modules/.bin/eslint ./**/*.js",
     "report:coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
   },
   "repository": {
