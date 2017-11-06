@@ -4,6 +4,7 @@ This package lets you generate fast json templates for your apis. It lets you qu
 
 [![NPM Version](https://img.shields.io/npm/v/jyson.svg)](https://www.npmjs.com/package/jyson)
 [![Travis Build Status](https://img.shields.io/travis/hubba/jyson.svg)](https://travis-ci.org/hubba/jyson)
+[![Coveralls](https://img.shields.io/coveralls/github/hubba/jyson.svg)](https://coveralls.io/github/hubba/jyson)
 [![Gemnasium Dependency Status](https://img.shields.io/gemnasium/hubba/jyson.svg)](https://gemnasium.com/github.com/hubba/jyson)
 [![NPM Downloads](https://img.shields.io/npm/dm/jyson.svg)](https://www.npmjs.com/package/jyson)
 
