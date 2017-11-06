@@ -50,6 +50,6 @@ describe('jyson.example.spec: an example', () => {
           dateRan: 1496351371149
         }
       }
-      );
+    );
   });
 });
