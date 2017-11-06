@@ -2,10 +2,10 @@
 
 This package lets you generate fast json templates for your apis. It lets you quickly build powerful api templates.
 
-[![Build Status](https://api.travis-ci.org/hubba/jyson.svg?branch=master)](https://travis-ci.org/hubba/jyson)
-[![npm version](https://badge.fury.io/js/jyson.svg)](https://badge.fury.io/js/jyson)
-[![Dependency Status](https://gemnasium.com/badges/github.com/hubba/jyson.svg)](https://gemnasium.com/github.com/hubba/jyson)
-
+[![NPM Version](https://img.shields.io/npm/v/jyson.svg)](https://www.npmjs.com/package/jyson)
+[![Travis Build Status](https://img.shields.io/travis/hubba/jyson.svg)](https://travis-ci.org/hubba/jyson)
+[![Gemnasium Dependency Status](https://img.shields.io/gemnasium/hubba/jyson.svg)](https://gemnasium.com/github.com/hubba/jyson)
+[![NPM Downloads](https://img.shields.io/npm/dm/jyson.svg)](https://www.npmjs.com/package/jyson)
 
 ## Install
 ```bash
