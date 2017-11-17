@@ -238,5 +238,85 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
     });
+
+    describe('arrays that access multiple arrays', () => {
+      beforeEach(() =>{
+        this.templateFunction = jyson.buildTemplateFunction({
+          x: [{
+            a: 'a.$.a',
+            b: 'b.$.b',
+            c: 'c.$.c'
+          }]
+        });
+      });
+
+      describe('when all the arrays are the same length', () => {
+        it('must convert an object to json', () => {
+          const input = {
+            a: [
+              {
+                a: 'a0a',
+              }, {
+                a: 'a1a',
+              }
+            ],
+            b: [
+              {
+                b: 'b0b',
+              }, {
+                b: 'b1b',
+              }
+            ],
+            c: [
+              {
+                c: 'c0c',
+              }, {
+                c: 'c1c',
+              }
+            ],
+          };
+          const json = this.templateFunction(input);
+          expect(json.x.length).to.equal(2);
+          expect(json.x[0].a).to.equal('a0a');
+          expect(json.x[0].b).to.equal('b0b');
+          expect(json.x[0].c).to.equal('c0c');
+          expect(json.x[1].a).to.equal('a1a');
+          expect(json.x[1].b).to.equal('b1b');
+          expect(json.x[1].c).to.equal('c1c');
+        });
+      });
+
+      describe('when one of the arrays is longer than the others', () => {
+        it('must convert an object to json', () => {
+          const input = {
+            a: [
+              {
+                a: 'a0a',
+              }, {
+                a: 'a1a',
+              }
+            ],
+            b: [
+              {
+                b: 'b0b',
+              }
+            ],
+            c: [
+              {
+                c: 'c0c',
+              }
+            ],
+          };
+          const json = this.templateFunction(input);
+          expect(json.x.length).to.equal(2);
+          expect(json.x[0].a).to.equal('a0a');
+          expect(json.x[0].b).to.equal('b0b');
+          expect(json.x[0].c).to.equal('c0c');
+          expect(json.x[1].a).to.equal('a1a');
+          expect(json.x[1].b).to.equal(null);
+          expect(json.x[1].c).to.equal(null);
+        });
+      });
+    });
   });
 });
