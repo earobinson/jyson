@@ -1,7 +1,7 @@
 # jyson changelog
 
 ## v2.0.0
-- Jyson no longer throws an error to handel arrays it reads ahead to determine array length
+- Jyson no longer throws an error to handle arrays it reads ahead to determine array length
 - A Jyson template can now access two different arrays
 - Resolves [Issue #15](https://github.com/hubba/jyson/issues/15)
 
