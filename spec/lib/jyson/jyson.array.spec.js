@@ -321,17 +321,6 @@ describe('jyson.array.spec: an array in the template', () => {
     });
   });
 
-jyson.buildTemplateFunction({
-e: [{
-  f: [{
-    g: [{
-      h: 'a.$.b.$.c.$.d'
-    }]
-  }]
-}]
-});
-});
-
   describe('template arrays of arrays of arrays', () => {
     describe('simple arrays', () => {
       beforeEach(() =>{
