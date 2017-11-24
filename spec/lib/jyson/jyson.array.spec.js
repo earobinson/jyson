@@ -1,3 +1,4 @@
+const set = require('lodash.set');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -316,6 +317,156 @@ describe('jyson.array.spec: an array in the template', () => {
           expect(json.x[1].b).to.equal(null);
           expect(json.x[1].c).to.equal(null);
         });
+      });
+    });
+  });
+
+jyson.buildTemplateFunction({
+e: [{
+  f: [{
+    g: [{
+      h: 'a.$.b.$.c.$.d'
+    }]
+  }]
+}]
+});
+});
+
+  describe('template arrays of arrays of arrays', () => {
+    describe('simple arrays', () => {
+      beforeEach(() =>{
+        this.templateFunction = jyson.buildTemplateFunction({
+          e: [{
+            f: [{
+              g: [{
+                h: 'a.$.b.$.c.$.d'
+              }]
+            }]
+          }]
+        });
+      });
+
+      it('must convert an object to json', () => {
+        const input = {
+          a: [{
+            b: [{
+              c: [{
+                d: 'arrays'
+              }]
+            }]
+          }]
+        };
+        const json = this.templateFunction(input);
+        expect(json).to.deep.equal({
+          e: [{
+            f: [{
+              g: [{
+                h: 'arrays'
+              }]
+            }]
+          }]
+        });
+      });
+
+      it('must handle a missing a', () => {
+        const input = {};
+        const json = this.templateFunction(input);
+        expect(json).to.deep.equal({
+          e: []
+        });
+      });
+
+      it('must handle an empty a array', () => {
+        const input = {
+          a: []
+        };
+        const json = this.templateFunction(input);
+        expect(json).to.deep.equal({
+          e: []
+        });
+      });
+
+      it('must handle an empty b array', () => {
+        const input = {
+          a: [{
+            b: []
+          }]
+        };
+        const json = this.templateFunction(input);
+        expect(json).to.deep.equal({
+          e: [{
+            f: []
+          }]
+        });
+      });
+
+      it('must handle an empty c array', () => {
+        const input = {
+          a: [{
+            b: [{
+              c: []
+            }]
+          }]
+        };
+        const json = this.templateFunction(input);
+        expect(json).to.deep.equal({
+          e: [{
+            f: [{
+              g: []
+            }]
+          }]
+        });
+      });
+
+      it('must handle a missing empty d', () => {
+        const input = {
+          a: [{
+            b: [{
+              c: [{}]
+            }]
+          }]
+        };
+        const json = this.templateFunction(input);
+        expect(json).to.deep.equal({
+          e: [{
+            f: [{
+              g: [{
+                h: null
+              }]
+            }]
+          }]
+        });
+      });
+
+      it('must convert an object with many arrays to json', () => {
+        const input = {};
+        const output = {};
+        const arrayLengths = 10;
+
+        for(let a = 0; a < arrayLengths; a++) {
+          for(let b = 0; b < arrayLengths; b++) {
+            for(let c = 0; c < arrayLengths; c++) {
+              for(let d = 0; d < arrayLengths; d++) {
+                set(input, `a[${a}]b[${b}]c[${c}]d`, `${a}-${b}-${c}-${d}`);
+                set(output, `e[${a}]f[${b}]g[${c}]h`, `${a}-${b}-${c}-${d}`);
+              }
+            }
+          }
+        }
+        const json = this.templateFunction(input);
+        // console.log(JSON.stringify(output, null, 2));
+        // console.log(JSON.stringify(json, null, 2));
+        expect(json).to.deep.equal(output);
+        // console.log(JSON.stringify({input}, null, 2));
+        // expect(json).to.deep.equal({
+        //   e: [{
+        //     f: [{
+        //       g: [{
+        //         h: 'arrays'
+        //       }]
+        //     }]
+        //   }]
+        // });
       });
     });
   });
