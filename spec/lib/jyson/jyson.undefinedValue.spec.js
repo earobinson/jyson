@@ -6,11 +6,12 @@ const expect = chai.expect;
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.undefinedValue.spec: basic undefined', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: 'a',
-      b: {b: 'b'},
-      c: function({object}) {
+      b: { b: 'b' },
+      // eslint-disable-next-line
+      c: function({ object }) {
         return object.c;
       }
     }, {
@@ -86,11 +87,11 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
 });
 
 describe('jyson.undefinedValue.spec: string undefined', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: 'a',
-      b: {b: 'b'},
-      c: function({object}) {
+      b: { b: 'b' },
+      c: function getC({ object }) {
         return object.c;
       }
     }, {

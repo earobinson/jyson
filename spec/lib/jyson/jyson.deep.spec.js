@@ -5,11 +5,11 @@ const expect = chai.expect;
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.deep.spec: a template with deep paths', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: 'a',
-      b: {b: 'b'},
-      c: {c: {c:'c'}}
+      b: { b: 'b' },
+      c: { c: { c:'c' } }
     });
   });
 

@@ -10,13 +10,13 @@ const jyson = require('./../../../lib/jyson');
 
 describe('jyson.function.spec: a function in the template', () => {
   describe('simple functions', () => {
-    beforeEach(() =>{
+    beforeEach(() => {
       this.templateFunction = jyson.buildTemplateFunction({
         a: () => 1,
         b: () => {
           return 2;
         },
-        c: function() {
+        c: () => {
           return 3;
         }
       });
@@ -58,13 +58,13 @@ describe('jyson.function.spec: a function in the template', () => {
   });
 
   describe('simple undefined functions', () => {
-    beforeEach(() =>{
+    beforeEach(() => {
       this.templateFunction = jyson.buildTemplateFunction({
         a: () => 1,
         b: () => {
           return;
         },
-        c: function() {
+        c: () => {
           return;
         }
       });
@@ -85,10 +85,10 @@ describe('jyson.function.spec: a function in the template', () => {
   });
 
   describe('nested comments via functions', () => {
-    beforeEach(() =>{
+    beforeEach(() => {
       this.templateFunction = jyson.buildTemplateFunction({
         commentText: 'text',
-        commentReplies: ({object, opts}) => {
+        commentReplies: ({ object, opts }) => {
           return this.templateFunction(_.filter(opts.comments, comment => {
             return comment.parent === object.id;
           }), opts);
@@ -98,20 +98,20 @@ describe('jyson.function.spec: a function in the template', () => {
 
     it('must be able to use functions to create reddit style comments', () => {
       const comments = [
-        {id: 0, parent: null, text: '0'},
-        {id: 1, parent: 0,    text: '0.1'},
-        {id: 2, parent: 0,    text: '0.2'},
-        {id: 3, parent: 1,    text: '0.1.1'},
-        {id: 4, parent: 0,    text: '0.3'},
-        {id: 5, parent: 6,    text: '0.4'}, // this comment is orphaned
-        {id: 7, parent: null, text: '1'}, // note no comment 6 due to 5
+        { id: 0, parent: null, text: '0' },
+        { id: 1, parent: 0,    text: '0.1' },
+        { id: 2, parent: 0,    text: '0.2' },
+        { id: 3, parent: 1,    text: '0.1.1' },
+        { id: 4, parent: 0,    text: '0.3' },
+        { id: 5, parent: 6,    text: '0.4' }, // this comment is orphaned
+        { id: 7, parent: null, text: '1' }, // note no comment 6 due to 5
       ];
 
       const rootComments = _.filter(comments, comment => {
         return comment.parent === null;
       });
 
-      const json = this.templateFunction(rootComments, {comments});
+      const json = this.templateFunction(rootComments, { comments });
 
       expect(json).to.deep.equal([
         { commentText: '0', commentReplies: [

@@ -5,14 +5,14 @@ const expect = chai.expect;
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.example.spec: an example', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.productTemplateFunction = jyson.buildTemplateFunction({
       name: 'name',
       tags: ['meta.tags.$'],
       other: {
         dogRating: 'meta.rating',
         exampleMissingValue: 'notFound',
-        dateRan: ({opts}) => opts.dateRan
+        dateRan: ({ opts }) => opts.dateRan
       },
     });
   });
@@ -32,7 +32,7 @@ describe('jyson.example.spec: an example', () => {
       }
     };
 
-    const json = this.productTemplateFunction(input, {dateRan: 1496351371149});
+    const json = this.productTemplateFunction(input, { dateRan: 1496351371149 });
 
     expect(json).to.deep.equal(
       {

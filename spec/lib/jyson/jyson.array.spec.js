@@ -7,7 +7,7 @@ const jyson = require('./../../../lib/jyson');
 
 describe('jyson.array.spec: an array in the template', () => {
   describe('template arrays defined by strings', () => {
-    beforeEach(() =>{
+    beforeEach(() => {
       this.templateFunction = jyson.buildTemplateFunction({
         a: ['a.$'],
         b: ['b.$'],
@@ -70,7 +70,7 @@ describe('jyson.array.spec: an array in the template', () => {
 
   describe('template arrays defined by objects', () => {
     describe('simple arrays', () => {
-      beforeEach(() =>{
+      beforeEach(() => {
         this.templateFunction = jyson.buildTemplateFunction({
           a: [{
             a: 'a.$.a',
@@ -186,7 +186,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('simple arrays', () => {
-      beforeEach(() =>{
+      beforeEach(() => {
         this.templateFunction = jyson.buildTemplateFunction({
           a: [{
             b: {
@@ -241,7 +241,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('arrays that access multiple arrays', () => {
-      beforeEach(() =>{
+      beforeEach(() => {
         this.templateFunction = jyson.buildTemplateFunction({
           x: [{
             a: 'a.$.a',
@@ -322,7 +322,7 @@ describe('jyson.array.spec: an array in the template', () => {
   });
 
   describe('template arrays of arrays of arrays', () => {
-    beforeEach(() =>{
+    beforeEach(() => {
       this.templateFunction = jyson.buildTemplateFunction({
         e: [{
           f: [{
