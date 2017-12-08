@@ -3,7 +3,7 @@ const expect = chai.expect;
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.regression.spec: avoiding regressions', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.productTemplateFunction = jyson.buildTemplateFunction({
       name: 'name',
       countries: ['countries.$'],

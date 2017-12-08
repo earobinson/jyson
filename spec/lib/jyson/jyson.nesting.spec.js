@@ -5,7 +5,7 @@ const expect = chai.expect;
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.nesting.spec: a template with nesting', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: 'a',
       b: 'b.b',
@@ -16,8 +16,8 @@ describe('jyson.nesting.spec: a template with nesting', () => {
   it('must convert an object to "json"', () => {
     const input = {
       a: 1,
-      b: {b: 2},
-      c: {c: {c:3}}
+      b: { b: 2 },
+      c: { c: { c:3 } }
     };
     const json = this.templateFunction(input);
 

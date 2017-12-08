@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/hubba/jyson#readme",
   "devDependencies": {
+    "@ear/eslint-config": "^1.0.0-alpha.1",
     "chai": "^4.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^4.4.1",

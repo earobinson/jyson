@@ -7,7 +7,7 @@ const expect = chai.expect;
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.basic.spec: a basic template', () => {
-  beforeEach(() =>{
+  beforeEach(() => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: 'a',
       b: 'b',
@@ -70,57 +70,57 @@ describe('jyson.basic.spec: a basic template', () => {
 
   it('must convert arrays "json"', () => {
     const input = [
-      {a:1},
-      {b:2},
-      {c:3}
+      { a:1 },
+      { b:2 },
+      { c:3 }
     ];
     const json = this.templateFunction(input);
 
     expect(json).to.deep.equal([
-      {a:1, b:null, c:null},
-      {a:null, b:2, c:null},
-      {a:null, b:null, c:3}
+      { a:1, b:null, c:null },
+      { a:null, b:2, c:null },
+      { a:null, b:null, c:3 }
     ]);
   });
 
   it('must convert deep arrays "json"', () => {
     this.templateFunction = jyson.buildTemplateFunction({
-      a: {a: 'a.a'},
-      b: {b: 'b.b'},
-      c: {c: 'c.c'},
+      a: { a: 'a.a' },
+      b: { b: 'b.b' },
+      c: { c: 'c.c' },
     });
 
     const input = [
-      {a:{a: 1}},
-      {b:{b: 2}},
-      {c:{c: 3}}
+      { a:{ a: 1 } },
+      { b:{ b: 2 } },
+      { c:{ c: 3 } }
     ];
     const json = this.templateFunction(input);
 
     expect(json).to.deep.equal([
-      {a:{a:1}, b:{b: null}, c:{c: null}},
-      {a:{a:null}, b:{b: 2}, c:{c: null}},
-      {a:{a:null}, b:{b: null}, c:{c: 3}}
+      { a:{ a:1 }, b:{ b: null }, c:{ c: null } },
+      { a:{ a:null }, b:{ b: 2 }, c:{ c: null } },
+      { a:{ a:null }, b:{ b: null }, c:{ c: 3 } }
     ]);
   });
 
   it('must convert an object with properties "json"', () => {
     const input = {};
     Object.defineProperty(input, 'a', {
-      get: function() { return 1; },
-      set: function() { },
+      get: () => { return 1; },
+      set: () => { },
       enumerable: true,
       configurable: false
     });
     Object.defineProperty(input, 'b', {
-      get: function() { return 2; },
-      set: function() { },
+      get: () => { return 2; },
+      set: () => { },
       enumerable: true,
       configurable: false
     });
     Object.defineProperty(input, 'c', {
-      get: function() { return 3; },
-      set: function() {  },
+      get: () => { return 3; },
+      set: () => {  },
       enumerable: true,
       configurable: false
     });
