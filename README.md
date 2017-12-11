@@ -66,6 +66,11 @@ productTemplateFunction([input], {dateRan: 1496351371149});
  - Easy to understand
  - Make jyson part of the common lexicon
 
+## Contributing
+
+Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions
+for opening issues, coding standards, and notes on development.
+
 ***
 
 Built with ❤️ at [Hubba](https://www.hubba.com?utm_campaign=hubba_oss).
