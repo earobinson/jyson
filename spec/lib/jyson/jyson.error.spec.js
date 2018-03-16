@@ -18,7 +18,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
     .then(() => {
       return Q.reject('an error should have been thrown');
     })
-    .catch(err => {
+    .catch((err) => {
       expect(err).to.equal('jyson encountered an unknown template value: undefined');
     });
   });
@@ -36,7 +36,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
       .then(() => {
         return Q.reject('an error should have been thrown');
       })
-      .catch(err => {
+      .catch((err) => {
         expect(err.message).to.equal('jyson template arrays must be of length one at key: key');
       });
     });
@@ -56,7 +56,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
         .then(() => {
           return Q.reject('an error should have been thrown');
         })
-        .catch(err => {
+        .catch((err) => {
           expect(err).to.equal('jyson encountered an invalid array at: key');
         });
       });
@@ -77,7 +77,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
         .then(() => {
           return Q.reject('an error should have been thrown');
         })
-        .catch(err => {
+        .catch((err) => {
           expect(err).to.equal('jyson encountered an invalid array at: barKey');
         });
       });
@@ -98,7 +98,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
         .then(() => {
           return Q.reject('an error should have been thrown');
         })
-        .catch(err => {
+        .catch((err) => {
           expect(err).to.equal('jyson encountered an invalid array at: foo');
         });
       });

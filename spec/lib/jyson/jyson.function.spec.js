@@ -89,7 +89,7 @@ describe('jyson.function.spec: a function in the template', () => {
       this.templateFunction = jyson.buildTemplateFunction({
         commentText: 'text',
         commentReplies: ({ object, opts }) => {
-          return this.templateFunction(_.filter(opts.comments, comment => {
+          return this.templateFunction(_.filter(opts.comments, (comment) => {
             return comment.parent === object.id;
           }), opts);
         }
@@ -107,7 +107,7 @@ describe('jyson.function.spec: a function in the template', () => {
         { id: 7, parent: null, text: '1' }, // note no comment 6 due to 5
       ];
 
-      const rootComments = _.filter(comments, comment => {
+      const rootComments = _.filter(comments, (comment) => {
         return comment.parent === null;
       });
 

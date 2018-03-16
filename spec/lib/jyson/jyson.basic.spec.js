@@ -62,7 +62,7 @@ describe('jyson.basic.spec: a basic template', () => {
     .then(() => {
       return Q.reject('an error should have been thrown');
     })
-    .catch(error => {
+    .catch((error) => {
       expect(error).to.be.an.instanceOf(assert.AssertionError);
       expect(error.message).to.equal('jyson encountered an array when it was not expecting one: a');
     });
