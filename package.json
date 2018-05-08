@@ -1,6 +1,6 @@
 {
   "name": "jyson",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A template engine for json.",
   "main": "index.js",
   "scripts": {
@@ -25,15 +25,15 @@
   },
   "homepage": "https://github.com/hubba/jyson#readme",
   "devDependencies": {
-    "@ear/eslint-config": "^1.1.0",
+    "@ear/eslint-config": "^1.2.0",
     "chai": "^4.0.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^4.19.0",
+    "coveralls": "^3.0.1",
+    "eslint": "^4.19.1",
     "lodash.set": "^4.3.2",
-    "mocha": "^5.0.4",
-    "nyc": "^11.6.0",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "q": "^1.5.0",
-    "sinon": "^4.4.6",
+    "sinon": "^4.5.0",
     "sinon-chai": "^2.10.0"
   },
   "dependencies": {
