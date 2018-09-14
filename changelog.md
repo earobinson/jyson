@@ -1,5 +1,21 @@
 # jyson changelog
 
+## v3.1.0
+- Adds undefinedValue value on a case by case basis
+  - The following is now valid jyson
+```
+jyson.buildTemplateFunction({
+  'a': new jyson.Value({ path: 'a', undefinedValue: 'qwerty' }),
+  'b': new jyson.Value({ path: 'b', undefinedValue: null }),
+  'c': new jyson.Value({ path: 'c', undefinedValue: undefined }),
+  'd': new jyson.Value({ path: 'd' })
+});
+```
+- Closes [Issue #10](https://github.com/hubba/jyson/issues/10)
+
+## v3.0.1
+- Bug fixes
+
 ## v3.0.0
 - Adds nested array support to jyson
   - The following is now valid jyson
