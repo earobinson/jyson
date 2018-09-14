@@ -1,5 +1,4 @@
 const assert = require('assert');
-const Q = require('q');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -87,16 +86,13 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
           a: 1,
         };
 
-        return Q.when(null, () => {
-          return templateFunction(input);
-        })
-        .then(() => {
-          return Q.reject('an error should have been thrown');
-        })
-        .catch((error) => {
+        try {
+          templateFunction(input);
+          return Promise.reject('an error should have been thrown');
+        } catch(error) {
           expect(error).to.be.an.instanceOf(assert.AssertionError);
           expect(error.message).to.equal('jyson encountered a Value that was missing a path: a');
-        });
+        }
       });
     });
   });

@@ -1,4 +1,3 @@
-const Q = require('q');
 const assert = require('assert');
 const chai = require('chai');
 
@@ -56,16 +55,13 @@ describe('jyson.basic.spec: a basic template', () => {
       a: [1],
     };
 
-    return Q.when(null, () => {
-      return this.templateFunction(input);
-    })
-    .then(() => {
-      return Q.reject('an error should have been thrown');
-    })
-    .catch((error) => {
+    try {
+      this.templateFunction(input);
+      return Promise.reject('an error should have been thrown');
+    } catch(error) {
       expect(error).to.be.an.instanceOf(assert.AssertionError);
       expect(error.message).to.equal('jyson encountered an array when it was not expecting one: a');
-    });
+    }
   });
 
   it('must convert arrays "json"', () => {
