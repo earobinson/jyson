@@ -13,7 +13,7 @@ jyson.buildTemplateFunction({
 ```
 - Closes [Issue #10](https://github.com/hubba/jyson/issues/10)
 
-## v3.1.1
+## v3.0.1
 - Bug fixes
 
 ## v3.0.0
