@@ -1,5 +1,11 @@
 # jyson changelog
 
+## v3.1.1
+- Patched security issues in the following packages
+  - randomatic https://nodesecurity.io/advisories/157
+  - stringstream https://nodesecurity.io/advisories/664
+- Removed Q as a dependency
+
 ## v3.1.0
 - Adds undefinedValue value on a case by case basis
   - The following is now valid jyson
