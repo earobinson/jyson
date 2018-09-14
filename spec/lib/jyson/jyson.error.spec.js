@@ -1,4 +1,3 @@
-const Q = require('q');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -11,16 +10,12 @@ describe('jyson.error.spec: testing errors in jyson', () => {
       key: undefined
     });
 
-    return Q.when()
-    .then(() => {
-      return templateFunction({});
-    })
-    .then(() => {
-      return Q.reject('an error should have been thrown');
-    })
-    .catch((err) => {
-      expect(err).to.equal('jyson encountered an unknown template value: undefined');
-    });
+    try {
+      templateFunction({});
+      return Promise.reject('an error should have been thrown');
+    } catch(error) {
+      expect(error).to.equal('jyson encountered an unknown template value: undefined');
+    }
   });
 
   describe('arrays', () => {
@@ -29,16 +24,12 @@ describe('jyson.error.spec: testing errors in jyson', () => {
         key: ['a', 'b']
       });
 
-      return Q.when()
-      .then(() => {
-        return templateFunction({});
-      })
-      .then(() => {
-        return Q.reject('an error should have been thrown');
-      })
-      .catch((err) => {
-        expect(err.message).to.equal('jyson template arrays must be of length one at key: key');
-      });
+      try {
+        templateFunction({});
+        return Promise.reject('an error should have been thrown');
+      } catch(error) {
+        expect(error.message).to.equal('jyson template arrays must be of length one at key: key');
+      }
     });
 
     describe('missing a $', () => {
@@ -49,16 +40,12 @@ describe('jyson.error.spec: testing errors in jyson', () => {
           }]
         });
 
-        return Q.when()
-        .then(() => {
-          return templateFunction({});
-        })
-        .then(() => {
-          return Q.reject('an error should have been thrown');
-        })
-        .catch((err) => {
-          expect(err).to.equal('jyson encountered an invalid array at: key');
-        });
+        try {
+          templateFunction({});
+          return Promise.reject('an error should have been thrown');
+        } catch(error) {
+          expect(error).to.equal('jyson encountered an invalid array at: key');
+        }
       });
 
       it('must error in the simple case', () => {
@@ -70,16 +57,12 @@ describe('jyson.error.spec: testing errors in jyson', () => {
           }
         });
 
-        return Q.when()
-        .then(() => {
-          return templateFunction({});
-        })
-        .then(() => {
-          return Q.reject('an error should have been thrown');
-        })
-        .catch((err) => {
-          expect(err).to.equal('jyson encountered an invalid array at: barKey');
-        });
+        try {
+          templateFunction({});
+          return Promise.reject('an error should have been thrown');
+        } catch(error) {
+          expect(error).to.equal('jyson encountered an invalid array at: barKey');
+        }
       });
 
       it('must error with nested keys', () => {
@@ -91,16 +74,12 @@ describe('jyson.error.spec: testing errors in jyson', () => {
           }]
         });
 
-        return Q.when()
-        .then(() => {
-          return templateFunction({});
-        })
-        .then(() => {
-          return Q.reject('an error should have been thrown');
-        })
-        .catch((err) => {
-          expect(err).to.equal('jyson encountered an invalid array at: foo');
-        });
+        try {
+          templateFunction({});
+          return Promise.reject('an error should have been thrown');
+        } catch(error) {
+          expect(error).to.equal('jyson encountered an invalid array at: foo');
+        }
       });
     });
   });
