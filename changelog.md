@@ -1,5 +1,10 @@
 # jyson changelog
 
+## v3.1.2
+- Updated Jyson Packages, the following got updated:
+  - mocha
+  - coveralls
+
 ## v3.1.1
 - Patched security issues in the following packages
   - randomatic https://nodesecurity.io/advisories/157
