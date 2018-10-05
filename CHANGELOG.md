@@ -1,5 +1,23 @@
 # jyson changelog
 
+## v3.1.3
+- Fixed a bug that caused arrays to be empty in some edge cases:
+    ```
+    templateFunction = jyson.buildTemplateFunction({
+      a: [{
+        a: 'a.$.a',
+        b: 'b.b',
+      }]
+    });
+    templateFunction({
+      a: [{ a: 0 }, { a: 1 }],
+      b: { b: false },
+    })
+    ```
+  - would return `{ a: [] }` not `{ a: [ { a: 0, b: false }, { a: 1, b: false } ] }`
+- added `.npmignore` file to keep package file smaller
+- cleaned up some test cases
+
 ## v3.1.2
 - Updated Jyson Packages, the following got updated:
   - mocha

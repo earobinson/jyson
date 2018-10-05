@@ -80,112 +80,110 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      describe('simple arrays', () => {
-        it('must convert an object to json', () => {
-          const input = {
-            a: [
-              {
-                a: 'a0a',
-                b: 'a0b',
-                c: 'a0c',
-              }, {
-                a: 'a1a',
-                b: 'a1b',
-                c: 'a1c',
-              }
-            ],
-          };
-          const json = this.templateFunction(input);
-          expect(json.a.length).to.equal(2);
-          expect(json.a[0].a).to.equal('a0a');
-          expect(json.a[0].b).to.equal('a0b');
-          expect(json.a[0].c).to.equal('a0c');
-          expect(json.a[1].a).to.equal('a1a');
-          expect(json.a[1].b).to.equal('a1b');
-          expect(json.a[1].c).to.equal('a1c');
-        });
+      it('must convert an object to json', () => {
+        const input = {
+          a: [
+            {
+              a: 'a0a',
+              b: 'a0b',
+              c: 'a0c',
+            }, {
+              a: 'a1a',
+              b: 'a1b',
+              c: 'a1c',
+            }
+          ],
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].a).to.equal('a0a');
+        expect(json.a[0].b).to.equal('a0b');
+        expect(json.a[0].c).to.equal('a0c');
+        expect(json.a[1].a).to.equal('a1a');
+        expect(json.a[1].b).to.equal('a1b');
+        expect(json.a[1].c).to.equal('a1c');
+      });
 
-        it('must handel undefined values when converting an object to json', () => {
-          const input = {
-            a: [
-              {
-                a: 'a0a',
-                c: 'a0c',
-              }, {
-                a: 'a1a',
-                b: 'a1b',
-                c: 'a1c',
-              }
-            ],
-          };
-          const json = this.templateFunction(input);
-          expect(json.a.length).to.equal(2);
-          expect(json.a[0].a).to.equal('a0a');
-          expect(json.a[0].b).to.equal(null);
-          expect(json.a[0].c).to.equal('a0c');
-          expect(json.a[1].a).to.equal('a1a');
-          expect(json.a[1].b).to.equal('a1b');
-          expect(json.a[1].c).to.equal('a1c');
-        });
+      it('must handle undefined values when converting an object to json', () => {
+        const input = {
+          a: [
+            {
+              a: 'a0a',
+              c: 'a0c',
+            }, {
+              a: 'a1a',
+              b: 'a1b',
+              c: 'a1c',
+            }
+          ],
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].a).to.equal('a0a');
+        expect(json.a[0].b).to.equal(null);
+        expect(json.a[0].c).to.equal('a0c');
+        expect(json.a[1].a).to.equal('a1a');
+        expect(json.a[1].b).to.equal('a1b');
+        expect(json.a[1].c).to.equal('a1c');
+      });
 
-        it('must convert an object of length 10 to json', () => {
-          const input = {
-            a: [
-              {
-                a: 'a0a',
-                b: 'a0b',
-                c: 'a0c',
-              }, {
-                a: 'a1a',
-                b: 'a1b',
-                c: 'a1c',
-              }, {
-                a: 'a2a',
-                b: 'a2b',
-                c: 'a2c',
-              }, {
-                a: 'a3a',
-                b: 'a3b',
-                c: 'a3c',
-              }, {
-                a: 'a4a',
-                b: 'a4b',
-                c: 'a4c',
-              }, {
-                a: 'a5a',
-                b: 'a5b',
-                c: 'a5c',
-              }, {
-                a: 'a6a',
-                b: 'a6b',
-                c: 'a6c',
-              }, {
-                a: 'a7a',
-                b: 'a7b',
-                c: 'a7c',
-              }, {
-                a: 'a8a',
-                b: 'a8b',
-                c: 'a8c',
-              }, {
-                a: 'a9a',
-                b: 'a9b',
-                c: 'a9c',
-              }
-            ],
-          };
-          const json = this.templateFunction(input);
-          expect(json.a.length).to.equal(10);
-          for(let ii = 0; ii < 10; ii++) {
-            expect(json.a[ii].a).to.equal(`a${ii}a`);
-            expect(json.a[ii].b).to.equal(`a${ii}b`);
-            expect(json.a[ii].c).to.equal(`a${ii}c`);
-          }
-        });
+      it('must convert an object of length 10 to json', () => {
+        const input = {
+          a: [
+            {
+              a: 'a0a',
+              b: 'a0b',
+              c: 'a0c',
+            }, {
+              a: 'a1a',
+              b: 'a1b',
+              c: 'a1c',
+            }, {
+              a: 'a2a',
+              b: 'a2b',
+              c: 'a2c',
+            }, {
+              a: 'a3a',
+              b: 'a3b',
+              c: 'a3c',
+            }, {
+              a: 'a4a',
+              b: 'a4b',
+              c: 'a4c',
+            }, {
+              a: 'a5a',
+              b: 'a5b',
+              c: 'a5c',
+            }, {
+              a: 'a6a',
+              b: 'a6b',
+              c: 'a6c',
+            }, {
+              a: 'a7a',
+              b: 'a7b',
+              c: 'a7c',
+            }, {
+              a: 'a8a',
+              b: 'a8b',
+              c: 'a8c',
+            }, {
+              a: 'a9a',
+              b: 'a9b',
+              c: 'a9c',
+            }
+          ],
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(10);
+        for(let ii = 0; ii < 10; ii++) {
+          expect(json.a[ii].a).to.equal(`a${ii}a`);
+          expect(json.a[ii].b).to.equal(`a${ii}b`);
+          expect(json.a[ii].c).to.equal(`a${ii}c`);
+        }
       });
     });
 
-    describe('simple arrays', () => {
+    describe('complex arrays', () => {
       beforeEach(() => {
         this.templateFunction = jyson.buildTemplateFunction({
           a: [{
@@ -196,47 +194,45 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      describe('complex arrays', () => {
-        it('must convert an object to json of length one', () => {
-          const input = {
-            a: [
-              {
-                b: {
-                  c: 'easy as 123',
-                  d: 'do ray me'
-                }
+      it('must convert an object to json of length one', () => {
+        const input = {
+          a: [
+            {
+              b: {
+                c: 'easy as 123',
+                d: 'do ray me'
               }
-            ],
-          };
-          const json = this.templateFunction(input);
-          expect(json.a.length).to.equal(1);
-          expect(json.a[0].b.c).to.equal('easy as 123');
-          expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
-        });
+            }
+          ],
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(1);
+        expect(json.a[0].b.c).to.equal('easy as 123');
+        expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
+      });
 
-        it('must convert an object to json of length two', () => {
-          const input = {
-            a: [
-              {
-                b: {
-                  c: 'easy as 123',
-                  d: 'do ray me'
-                }
-              }, {
-                b: {
-                  c: 'EASY AS 123',
-                  d: 'do ray me'
-                }
+      it('must convert an object to json of length two', () => {
+        const input = {
+          a: [
+            {
+              b: {
+                c: 'easy as 123',
+                d: 'do ray me'
               }
-            ],
-          };
-          const json = this.templateFunction(input);
-          expect(json.a.length).to.equal(2);
-          expect(json.a[0].b.c).to.equal('easy as 123');
-          expect(json.a[1].b.c).to.equal('EASY AS 123');
-          expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
-          expect(Object.keys(json.a[1].b)).to.have.ordered.members(['c']);
-        });
+            }, {
+              b: {
+                c: 'EASY AS 123',
+                d: 'do ray me'
+              }
+            }
+          ],
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].b.c).to.equal('easy as 123');
+        expect(json.a[1].b.c).to.equal('EASY AS 123');
+        expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
+        expect(Object.keys(json.a[1].b)).to.have.ordered.members(['c']);
       });
     });
 
@@ -317,6 +313,80 @@ describe('jyson.array.spec: an array in the template', () => {
           expect(json.x[1].b).to.equal(null);
           expect(json.x[1].c).to.equal(null);
         });
+      });
+    });
+
+    describe('arrays that access non array values', () => {
+      beforeEach(() => {
+        this.templateFunction = jyson.buildTemplateFunction({
+          a: [{
+            a: 'a.$',
+            b: 'b',
+          }]
+        });
+      });
+
+      it('must convert an object to json', () => {
+        const input = {
+          a: [0, 1],
+          b: 'b'
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].a).to.equal(0);
+        expect(json.a[0].b).to.equal('b');
+        expect(json.a[1].a).to.equal(1);
+        expect(json.a[0].b).to.equal('b');
+      });
+
+      it('must convert an object to json when the order is reversed', () => {
+        const input = {
+          b: 'b',
+          a: [0, 1]
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].a).to.equal(0);
+        expect(json.a[0].b).to.equal('b');
+        expect(json.a[1].a).to.equal(1);
+        expect(json.a[0].b).to.equal('b');
+      });
+    });
+
+    describe('arrays that access non array values for nested arrays', () => {
+      beforeEach(() => {
+        this.templateFunction = jyson.buildTemplateFunction({
+          a: [{
+            a: 'a.$.a',
+            b: 'b.b',
+          }]
+        });
+      });
+
+      it('must convert an object to json', () => {
+        const input = {
+          a: [{ a: 0 }, { a: 1 }],
+          b: { b: 'b' }
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].a).to.equal(0);
+        expect(json.a[0].b).to.equal('b');
+        expect(json.a[1].a).to.equal(1);
+        expect(json.a[0].b).to.equal('b');
+      });
+
+      it('must convert an object to json when the non array value does not have a length', () => {
+        const input = {
+          a: [{ a: 0 }, { a: 1 }],
+          b: { b: false },
+        };
+        const json = this.templateFunction(input);
+        expect(json.a.length).to.equal(2);
+        expect(json.a[0].a).to.equal(0);
+        expect(json.a[0].b).to.equal(false);
+        expect(json.a[1].a).to.equal(1);
+        expect(json.a[0].b).to.equal(false);
       });
     });
   });
