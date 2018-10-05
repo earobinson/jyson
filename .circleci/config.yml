@@ -2,12 +2,21 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+workflows:
+  version: 2
+  node-multi-build:
+    jobs:
+      - node-v6
+      - node-v7
+      - node-v8
+      - node-v9
+      - node-v10
+
 version: 2
 jobs:
-  build:
+  node-base: &node-base
     docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: node
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -36,4 +45,24 @@ jobs:
       # run tests!
       - run: npm test
 
+  node-v6:
+    <<: *node-base
+    docker:
+      - image: node:6
+  node-v7:
+    <<: *node-base
+    docker:
+      - image: node:7
+  node-v8:
+    <<: *node-base
+    docker:
+      - image: node:8
+  node-v9:
+    <<: *node-base
+    docker:
+      - image: node:9
+  node-v10:
+    <<: *node-base
+    docker:
+      - image: node:10
 
