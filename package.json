@@ -8,7 +8,7 @@
     "test:watch": "npm test -- --watch",
     "test:lint": "./node_modules/.bin/eslint .",
     "test:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm test",
-    "test:junit": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\" --reporter mocha-junit-reporter --reporter-options mochaFile=./junit/file.xml",
+    "test:junit": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\" --reporter mocha-junit-reporter --reporter-options mochaFile=./junit/test-results.xml",
     "test:junit:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm run test:junit",
     "report:coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
   },
