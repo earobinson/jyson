@@ -41,8 +41,18 @@ jobs:
 
       # run tests!
       - run: npm run test:lint
-      - run: npm run test:coverage
+      - run:
+        command: npm run test:junit:coverage
+        environment:
+          MOCHA_FILE: junit/test-results.xml
+        when: always
       - run: npm run report:coverage
+
+      # Test results
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit
 
   node-v8:
     <<: *node-base

@@ -67,9 +67,11 @@ typings/
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 .travis.yml
+.circleci
 .git
 .eslintrc.js
 
 # Tests
 spec
 *.spec.js
+test-results.xml
