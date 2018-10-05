@@ -4,12 +4,10 @@
   "description": "A template engine for json.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\"",
+    "test": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\" --reporter mocha-multi-reporters --reporter-options configFile=./spec/spec.config.json",
     "test:watch": "npm test -- --watch",
     "test:lint": "./node_modules/.bin/eslint .",
     "test:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm test",
-    "test:junit": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\" --reporter mocha-junit-reporter --reporter-options mochaFile=./junit/test-results.xml",
-    "test:junit:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm run test:junit",
     "report:coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
   },
   "repository": {
@@ -34,6 +32,7 @@
     "lodash.set": "^4.3.2",
     "mocha": "^5.2.0",
     "mocha-junit-reporter": "^1.18.0",
+    "mocha-multi-reporters": "^1.1.7",
     "nyc": "^13.1.0",
     "sinon": "^4.5.0",
     "sinon-chai": "^2.10.0"
