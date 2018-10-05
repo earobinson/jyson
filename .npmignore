@@ -74,4 +74,4 @@ CONTRIBUTING.md
 # Tests
 spec
 *.spec.js
-test-results.xml
+junit

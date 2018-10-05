@@ -41,11 +41,7 @@ jobs:
 
       # run tests!
       - run: npm run test:lint
-      - run:
-        command: npm run test:junit:coverage
-        environment:
-          MOCHA_FILE: junit/test-results.xml
-        when: always
+      - run: npm run test:junit:coverage
       - run: npm run report:coverage
 
       # Test results
