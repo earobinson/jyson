@@ -19,7 +19,7 @@ jyson can create many different types of templates, for a full list of examples 
 ```js
 const jyson = require('jyson');
 
-productTemplateFunction = jyson.buildTemplateFunction({
+const productTemplateFunction = jyson.buildTemplateFunction({
   name: 'name',
   tags: ['meta.tags.$'],
   other: {
@@ -41,8 +41,9 @@ const input = {
       'lactobacillus casei'
     ],
   }
+};
 
-productTemplateFunction([input], {dateRan: 1496351371149});
+const result = productTemplateFunction([input], {dateRan: 1496351371149});
 // => [{
 //  name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
 //  tags:[

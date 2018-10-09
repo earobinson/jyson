@@ -62,3 +62,6 @@ typings/
 
 # Mac
 .DS_Store
+
+# Test results
+junit
