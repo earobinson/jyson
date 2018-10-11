@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
@@ -52,7 +51,8 @@ describe('jyson.function.spec: a function in the template', () => {
       expect(this.templateValueFunction).to.have.been.calledWith({
         key: 'a',
         object: { a: 0 },
-        opts: { arrayIndexes: [] }
+        templateOpts: {},
+        opts: { arrayIndexes: [], emptyArrayValue: [], undefinedValue: null }
       });
     });
   });
@@ -88,10 +88,10 @@ describe('jyson.function.spec: a function in the template', () => {
     beforeEach(() => {
       this.templateFunction = jyson.buildTemplateFunction({
         commentText: 'text',
-        commentReplies: ({ object, opts }) => {
-          return this.templateFunction(_.filter(opts.comments, (comment) => {
+        commentReplies: ({ object, templateOpts }) => {
+          return this.templateFunction(templateOpts.comments.filter((comment) => {
             return comment.parent === object.id;
-          }), opts);
+          }), templateOpts);
         }
       });
     });
@@ -107,7 +107,7 @@ describe('jyson.function.spec: a function in the template', () => {
         { id: 7, parent: null, text: '1' }, // note no comment 6 due to 5
       ];
 
-      const rootComments = _.filter(comments, (comment) => {
+      const rootComments = comments.filter((comment) => {
         return comment.parent === null;
       });
 

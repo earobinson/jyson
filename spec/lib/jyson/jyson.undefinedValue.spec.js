@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -25,8 +24,8 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
       c: 3
     };
     const json = this.templateFunction(input);
-    const jsonKeys = _.keys(json);
-    const jsonBKeys = _.keys(json.b);
+    const jsonKeys = Object.keys(json);
+    const jsonBKeys = Object.keys(json.b);
 
     expect(json.a).be.undefined;
     expect(json.b.b).to.equal(input.b);
@@ -47,8 +46,8 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
       c: 3
     };
     const json = this.templateFunction(input);
-    const jsonKeys = _.keys(json);
-    const jsonBKeys = _.keys(json.b);
+    const jsonKeys = Object.keys(json);
+    const jsonBKeys = Object.keys(json.b);
 
     expect(json.a).to.equal(input.a);
     expect(json.b.b).to.be.undefined;
@@ -69,8 +68,8 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
       b: 2
     };
     const json = this.templateFunction(input);
-    const jsonKeys = _.keys(json);
-    const jsonBKeys = _.keys(json.b);
+    const jsonKeys = Object.keys(json);
+    const jsonBKeys = Object.keys(json.b);
 
     expect(json.a).to.equal(input.a);
     expect(json.b.b).to.equal(input.b);

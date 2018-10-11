@@ -75,3 +75,4 @@ CONTRIBUTING.md
 spec
 *.spec.js
 junit
+.nyc_output

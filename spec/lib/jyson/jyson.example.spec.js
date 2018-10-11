@@ -12,7 +12,7 @@ describe('jyson.example.spec: an example', () => {
       other: {
         dogRating: 'meta.rating',
         exampleMissingValue: 'notFound',
-        dateRan: ({ opts }) => opts.dateRan
+        dateRan: ({ templateOpts }) => templateOpts.dateRan
       },
     });
   });
