@@ -79,19 +79,19 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
 
     describe('path', () => {
       it('must error if it encounters a json.Value thats missing a path', () => {
-        const templateFunction = jyson.buildTemplateFunction({
-          'a': new jyson.Value({ undefinedValue: 'qwerty' }),
-        });
-        const input = {
-          a: 1,
-        };
-
         try {
+          const templateFunction = jyson.buildTemplateFunction({
+            'a': new jyson.Value({ undefinedValue: 'qwerty' }),
+          });
+          const input = {
+            a: 1,
+          };
+
           templateFunction(input);
           return Promise.reject('an error should have been thrown');
         } catch(error) {
           expect(error).to.be.an.instanceOf(assert.AssertionError);
-          expect(error.message).to.equal('jyson encountered a Value that was missing a path: a');
+          expect(error.message).to.equal('JsonValue requires a path');
         }
       });
     });
