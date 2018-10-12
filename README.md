@@ -25,7 +25,7 @@ const productTemplateFunction = jyson.buildTemplateFunction({
   other: {
     dogRating: 'meta.rating',
     exampleMissingValue: 'notFound',
-    dateRan: ({opts}) => opts.dateRan
+    dateRan: ({ templateOpts }) => templateOpts.dateRan
   }
 });
 

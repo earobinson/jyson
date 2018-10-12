@@ -1,5 +1,51 @@
 # jyson changelog
 
+## v4.0.0
+- Adds support for jyson.Array
+  - this lets a user define a global `emptyArrayValue` or a per array `emptyArrayValue`
+  - the following are now valid jyson
+    ```
+    jyson.buildTemplateFunction({
+      a: ['a.$']
+    }, {
+      emptyArrayValue: null
+    });
+    ```
+    ```
+    jyson.buildTemplateFunction({
+      c: new jyson.Array({ value: 'c.$', emptyArrayValue: null }),
+    });
+    ```
+    ```
+    jyson.buildTemplateFunction({
+      c: new jyson.Array({ value: {c: 'c.$'}, emptyArrayValue: null }),
+    });
+    ```
+-  jyson functions now get called with templateOpts instead of opts so
+    ```
+    jyson.buildTemplateFunction({
+      name: 'name',
+      tags: ['meta.tags.$'],
+      other: {
+        dogRating: 'meta.rating',
+        exampleMissingValue: 'notFound',
+        dateRan: ({ opts }) => opts.dateRan
+      }
+    });
+    ```
+    becomes
+    ```
+    jyson.buildTemplateFunction({
+      name: 'name',
+      tags: ['meta.tags.$'],
+      other: {
+        dogRating: 'meta.rating',
+        exampleMissingValue: 'notFound',
+        dateRan: ({ templateOpts }) => templateOpts.dateRan
+      }
+    });
+    ```
+
 ## v3.1.3
 - Fixed a bug that caused arrays to be empty in some edge cases:
     ```

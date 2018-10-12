@@ -65,3 +65,4 @@ typings/
 
 # Test results
 junit
+.nyc_output
