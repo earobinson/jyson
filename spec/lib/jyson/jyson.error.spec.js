@@ -14,7 +14,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
       templateFunction({});
       return Promise.reject('an error should have been thrown');
     } catch(error) {
-      expect(error).to.equal('jyson encountered an unknown template value: undefined');
+      expect(error.message).to.equal('jyson encountered an unknown template value: undefined');
     }
   });
 
@@ -44,7 +44,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
           templateFunction({});
           return Promise.reject('an error should have been thrown');
         } catch(error) {
-          expect(error).to.equal('jyson encountered an invalid array at: key');
+          expect(error.message).to.equal('jyson encountered an invalid array at: key');
         }
       });
 
@@ -61,7 +61,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
           templateFunction({});
           return Promise.reject('an error should have been thrown');
         } catch(error) {
-          expect(error).to.equal('jyson encountered an invalid array at: barKey');
+          expect(error.message).to.equal('jyson encountered an invalid array at: barKey');
         }
       });
 
@@ -78,7 +78,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
           templateFunction({});
           return Promise.reject('an error should have been thrown');
         } catch(error) {
-          expect(error).to.equal('jyson encountered an invalid array at: foo');
+          expect(error.message).to.equal('jyson encountered an invalid array at: foo');
         }
       });
     });
