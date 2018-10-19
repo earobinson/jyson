@@ -9,7 +9,7 @@ describe('jyson.deep.spec: a template with deep paths', () => {
     });
   });
 
-  test('must convert an object to "json"', () => {
+  it('must convert an object to "json"', () => {
     const input = {
       a: 1,
       b: 2,

@@ -12,7 +12,7 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
     });
   });
 
-  test('must convert an object to "json"', () => {
+  it('must convert an object to "json"', () => {
     const input = {
       a: 1,
       b: 2,
@@ -87,7 +87,7 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
     });
 
     describe('path', () => {
-      test('must error if it encounters a json.Value thats missing a path', () => {
+      it('must error if it encounters a json.Value thats missing a path', () => {
         try {
           const templateFunction = jyson.buildTemplateFunction({
             'a': new jyson.Value({ undefinedValue: 'qwerty' }),

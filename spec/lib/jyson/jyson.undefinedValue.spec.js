@@ -14,7 +14,7 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     });
   });
 
-  test('must handle missing basic values', () => {
+  it('must handle missing basic values', () => {
     const input = {
       b: 2,
       c: 3
@@ -36,7 +36,7 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     expect(jsonBKeys).toContain('b');
   });
 
-  test('must handle missing nested values', () => {
+  it('must handle missing nested values', () => {
     const input = {
       a: 1,
       c: 3
@@ -58,7 +58,7 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     expect(jsonBKeys).not.toContain('b');
   });
 
-  test('must handle missing function values', () => {
+  it('must handle missing function values', () => {
     const input = {
       a: 1,
       b: 2
@@ -94,7 +94,7 @@ describe('jyson.undefinedValue.spec: string undefined', () => {
     });
   });
 
-  test('must handle missing basic values', () => {
+  it('must handle missing basic values', () => {
     const input = {
       b: 2,
       c: 3
@@ -106,7 +106,7 @@ describe('jyson.undefinedValue.spec: string undefined', () => {
     expect(json.c).toBe(input.c);
   });
 
-  test('must handle missing nested values', () => {
+  it('must handle missing nested values', () => {
     const input = {
       a: 1,
       c: 3
@@ -118,7 +118,7 @@ describe('jyson.undefinedValue.spec: string undefined', () => {
     expect(json.c).toBe(input.c);
   });
 
-  test('must handle missing function values', () => {
+  it('must handle missing function values', () => {
     const input = {
       a: 1,
       b: 2

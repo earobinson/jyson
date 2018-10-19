@@ -13,7 +13,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('simple arrays', () => {
-      test('must convert an object to json', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [1],
           b: [2, 3],
@@ -29,7 +29,7 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(json.c).toHaveLength(input.c.length);
       });
 
-      test('must convert an object to json when the array is not provided', () => {
+      it('must convert an object to json when the array is not provided', () => {
         const input = {
         };
         const json = this.templateFunction(input);
@@ -44,7 +44,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('complex arrays', () => {
-      test('must convert an object to json', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [1],
           b: [2, 3],
@@ -77,7 +77,7 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      test('must convert an object to json', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [
             {
@@ -101,7 +101,7 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(json.a[1].c).toBe('a1c');
       });
 
-      test('must handle undefined values when converting an object to json', () => {
+      it('must handle undefined values when converting an object to json', () => {
         const input = {
           a: [
             {
@@ -124,7 +124,7 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(json.a[1].c).toBe('a1c');
       });
 
-      test('must convert an object of length 10 to json', () => {
+      it('must convert an object of length 10 to json', () => {
         const input = {
           a: [
             {
@@ -191,7 +191,7 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      test('must convert an object to json of length one', () => {
+      it('must convert an object to json of length one', () => {
         const input = {
           a: [
             {
@@ -208,7 +208,7 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(Object.keys(json.a[0].b)).toEqual(expect.arrayContaining(['c']));
       });
 
-      test('must convert an object to json of length two', () => {
+      it('must convert an object to json of length two', () => {
         const input = {
           a: [
             {
@@ -245,7 +245,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
 
       describe('when all the arrays are the same length', () => {
-        test('must convert an object to json', () => {
+        it('must convert an object to json', () => {
           const input = {
             a: [
               {
@@ -281,7 +281,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
 
       describe('when one of the arrays is longer than the others', () => {
-        test('must convert an object to json', () => {
+        it('must convert an object to json', () => {
           const input = {
             a: [
               {
@@ -323,7 +323,7 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      test('must convert an object to json', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [0, 1],
           b: 'b'
@@ -336,7 +336,7 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(json.a[0].b).toBe('b');
       });
 
-      test('must convert an object to json when the order is reversed', () => {
+      it('must convert an object to json when the order is reversed', () => {
         const input = {
           b: 'b',
           a: [0, 1]
@@ -360,7 +360,7 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      test('must convert an object to json', () => {
+      it('must convert an object to json', () => {
         const input = {
           a: [{ a: 0 }, { a: 1 }],
           b: { b: 'b' }
@@ -404,7 +404,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must convert an object to json', () => {
+    it('must convert an object to json', () => {
       const input = {
         a: [{
           b: [{
@@ -426,7 +426,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must handle a missing a', () => {
+    it('must handle a missing a', () => {
       const input = {};
       const json = this.templateFunction(input);
       expect(json).toEqual({
@@ -434,7 +434,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must handle an empty a array', () => {
+    it('must handle an empty a array', () => {
       const input = {
         a: []
       };
@@ -444,7 +444,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must handle an empty b array', () => {
+    it('must handle an empty b array', () => {
       const input = {
         a: [{
           b: []
@@ -458,7 +458,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must handle an empty c array', () => {
+    it('must handle an empty c array', () => {
       const input = {
         a: [{
           b: [{
@@ -476,7 +476,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must handle a missing empty d', () => {
+    it('must handle a missing empty d', () => {
       const input = {
         a: [{
           b: [{
@@ -496,7 +496,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    test('must convert an object with many arrays to json', () => {
+    it('must convert an object with many arrays to json', () => {
       const input = {};
       const output = {};
       const arrayLengths = 10;

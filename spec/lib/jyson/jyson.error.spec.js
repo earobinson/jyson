@@ -1,7 +1,7 @@
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.error.spec: testing errors in jyson', () => {
-  test('must error if the template cant be parsed', () => {
+  it('must error if the template cant be parsed', () => {
     const templateFunction = jyson.buildTemplateFunction({
       key: undefined
     });
@@ -15,7 +15,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
   });
 
   describe('arrays', () => {
-    test('json template arrays must be of length 1', () => {
+    it('json template arrays must be of length 1', () => {
       const templateFunction = jyson.buildTemplateFunction({
         key: ['a', 'b']
       });
@@ -29,7 +29,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
     });
 
     describe('missing a $', () => {
-      test('must error in the simple case', () => {
+      it('must error in the simple case', () => {
         const templateFunction = jyson.buildTemplateFunction({
           key: [{
             key2: undefined
@@ -44,7 +44,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
         }
       });
 
-      test('must error in the simple case', () => {
+      it('must error in the simple case', () => {
         const templateFunction = jyson.buildTemplateFunction({
           fooKey: {
             barKey: [{
@@ -61,7 +61,7 @@ describe('jyson.error.spec: testing errors in jyson', () => {
         }
       });
 
-      test('must error with nested keys', () => {
+      it('must error with nested keys', () => {
         const templateFunction = jyson.buildTemplateFunction({
           foo: [{
             bar: {

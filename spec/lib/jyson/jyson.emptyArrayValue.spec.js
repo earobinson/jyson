@@ -11,7 +11,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve arrays', () => {
+      it('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
@@ -22,7 +22,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve an empty array', () => {
+      it('must resolve an empty array', () => {
         const input = {
           a: []
         };
@@ -33,7 +33,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve a missing array', () => {
+      it('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
@@ -53,7 +53,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve arrays', () => {
+      it('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
@@ -64,7 +64,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve an empty array', () => {
+      it('must resolve an empty array', () => {
         const input = {
           a: []
         };
@@ -75,7 +75,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve a missing array', () => {
+      it('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
@@ -95,7 +95,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve arrays', () => {
+      it('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
@@ -106,7 +106,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve an empty array', () => {
+      it('must resolve an empty array', () => {
         const input = {
           a: []
         };
@@ -117,7 +117,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve a missing array', () => {
+      it('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
@@ -138,7 +138,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve arrays', () => {
+      it('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
@@ -149,7 +149,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve an empty array', () => {
+      it('must resolve an empty array', () => {
         const input = {
           a: []
         };
@@ -160,7 +160,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve a missing array', () => {
+      it('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
@@ -180,7 +180,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve arrays', () => {
+      it('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
@@ -191,7 +191,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve an empty array', () => {
+      it('must resolve an empty array', () => {
         const input = {
           a: []
         };
@@ -202,7 +202,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve a missing array', () => {
+      it('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
@@ -222,7 +222,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve arrays', () => {
+      it('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
@@ -233,7 +233,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve an empty array', () => {
+      it('must resolve an empty array', () => {
         const input = {
           a: []
         };
@@ -244,7 +244,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      test('must resolve a missing array', () => {
+      it('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);

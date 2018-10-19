@@ -2,7 +2,7 @@ const jyson = require('./../../../lib/jyson');
 
 describe('jysonValue.spec', () => {
   describe('errors', () => {
-    test('must error out if not path is provided', () => {
+    it('must error out if not path is provided', () => {
       try {
         new jyson.Value();
         return Promise.reject('an error should have been thrown');

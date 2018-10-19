@@ -11,7 +11,7 @@ describe('jyson.basic.spec: a basic template', () => {
     });
   });
 
-  test('must convert an object to "json"', () => {
+  it('must convert an object to "json"', () => {
     const input = {
       a: 1,
       b: 2,
@@ -24,7 +24,7 @@ describe('jyson.basic.spec: a basic template', () => {
     expect(json.c).toBe(input.c);
   });
 
-  test('must ignore additional values', () => {
+  it('must ignore additional values', () => {
     const input = {
       a: 1,
       b: 2,
@@ -37,7 +37,7 @@ describe('jyson.basic.spec: a basic template', () => {
     expect(Object.keys(json)).not.toContain('d');
   });
 
-  test('must use null for missing objects', () => {
+  it('must use null for missing objects', () => {
     const input = {
       a: 1,
       c: 3
@@ -47,7 +47,7 @@ describe('jyson.basic.spec: a basic template', () => {
     expect(json.b).toBeNull();
   });
 
-  test('must error if it encounters an unexpected array', () => {
+  it('must error if it encounters an unexpected array', () => {
     const input = {
       a: [1],
     };
@@ -61,7 +61,7 @@ describe('jyson.basic.spec: a basic template', () => {
     }
   });
 
-  test('must convert arrays "json"', () => {
+  it('must convert arrays "json"', () => {
     const input = [
       { a:1 },
       { b:2 },
@@ -76,7 +76,7 @@ describe('jyson.basic.spec: a basic template', () => {
     ]);
   });
 
-  test('must convert deep arrays "json"', () => {
+  it('must convert deep arrays "json"', () => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: { a: 'a.a' },
       b: { b: 'b.b' },
@@ -97,7 +97,7 @@ describe('jyson.basic.spec: a basic template', () => {
     ]);
   });
 
-  test('must convert an object with properties "json"', () => {
+  it('must convert an object with properties "json"', () => {
     const input = {};
     Object.defineProperty(input, 'a', {
       get: () => { return 1; },

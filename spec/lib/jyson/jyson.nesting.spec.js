@@ -9,7 +9,7 @@ describe('jyson.nesting.spec: a template with nesting', () => {
     });
   });
 
-  test('must convert an object to "json"', () => {
+  it('must convert an object to "json"', () => {
     const input = {
       a: 1,
       b: { b: 2 },

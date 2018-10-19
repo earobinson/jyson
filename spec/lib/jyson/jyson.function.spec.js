@@ -14,7 +14,7 @@ describe('jyson.function.spec: a function in the template', () => {
       });
     });
 
-    test('must convert an object to "json"', () => {
+    it('must convert an object to "json"', () => {
       const input = {
         a: 0,
         b: 0,
@@ -27,7 +27,7 @@ describe('jyson.function.spec: a function in the template', () => {
       expect(json.c).toBe(3);
     });
 
-    test('must call functions with the correct arguments', () => {
+    it('must call functions with the correct arguments', () => {
       this.templateValueFunction = jest.fn(() => 1);
       this.templateFunction = jyson.buildTemplateFunction({
         a: this.templateValueFunction,
@@ -63,7 +63,7 @@ describe('jyson.function.spec: a function in the template', () => {
       });
     });
 
-    test('must convert an object to "json"', () => {
+    it('must convert an object to "json"', () => {
       const input = {
         a: 0,
         b: 0,
@@ -89,7 +89,7 @@ describe('jyson.function.spec: a function in the template', () => {
       });
     });
 
-    test('must be able to use functions to create reddit style comments', () => {
+    it('must be able to use functions to create reddit style comments', () => {
       const comments = [
         { id: 0, parent: null, text: '0' },
         { id: 1, parent: 0,    text: '0.1' },

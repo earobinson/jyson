@@ -13,7 +13,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       });
     });
 
-    test('must convert an object to "json"', () => {
+    it('must convert an object to "json"', () => {
       const input = {
         a: [1],
         b: [2, 3],
@@ -27,7 +27,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       expect(json).toEqual(input);
     });
 
-    test('must use the default emptyArrayValue for missing arrays', () => {
+    it('must use the default emptyArrayValue for missing arrays', () => {
       const input = {
         b: [2, 3],
         c: [3, 4, 5],
@@ -137,7 +137,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       });
     });
 
-    test('must convert an object to "json"', () => {
+    it('must convert an object to "json"', () => {
       const input = {
         a: [1],
         b: [2, 3],
@@ -158,7 +158,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       });
     });
 
-    test('must use the default emptyArrayValue for missing arrays', () => {
+    it('must use the default emptyArrayValue for missing arrays', () => {
       const input = {
         b: [2, 3],
         c: [3, 4, 5],

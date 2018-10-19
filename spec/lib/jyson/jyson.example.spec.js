@@ -13,7 +13,7 @@ describe('jyson.example.spec: an example', () => {
     });
   });
 
-  test('must output example "json"', () => {
+  it('must output example "json"', () => {
     const input = {
       name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
       meta: {
