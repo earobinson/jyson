@@ -92,7 +92,7 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(2);
+        expect(json.a).toHaveLength(2);
         expect(json.a[0].a).toBe('a0a');
         expect(json.a[0].b).toBe('a0b');
         expect(json.a[0].c).toBe('a0c');
@@ -115,7 +115,7 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(2);
+        expect(json.a).toHaveLength(2);
         expect(json.a[0].a).toBe('a0a');
         expect(json.a[0].b).toBeNull();
         expect(json.a[0].c).toBe('a0c');
@@ -171,7 +171,7 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(10);
+        expect(json.a).toHaveLength(10);
         for(let ii = 0; ii < 10; ii++) {
           expect(json.a[ii].a).toBe(`a${ii}a`);
           expect(json.a[ii].b).toBe(`a${ii}b`);
@@ -203,7 +203,7 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(1);
+        expect(json.a).toHaveLength(1);
         expect(json.a[0].b.c).toBe('easy as 123');
         expect(Object.keys(json.a[0].b)).toEqual(expect.arrayContaining(['c']));
       });
@@ -225,7 +225,7 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(2);
+        expect(json.a).toHaveLength(2);
         expect(json.a[0].b.c).toBe('easy as 123');
         expect(json.a[1].b.c).toBe('EASY AS 123');
         expect(Object.keys(json.a[0].b)).toEqual(expect.arrayContaining(['c']));
@@ -270,7 +270,7 @@ describe('jyson.array.spec: an array in the template', () => {
             ],
           };
           const json = this.templateFunction(input);
-          expect(json.x.length).toBe(2);
+          expect(json.x).toHaveLength(2);
           expect(json.x[0].a).toBe('a0a');
           expect(json.x[0].b).toBe('b0b');
           expect(json.x[0].c).toBe('c0c');
@@ -302,7 +302,7 @@ describe('jyson.array.spec: an array in the template', () => {
             ],
           };
           const json = this.templateFunction(input);
-          expect(json.x.length).toBe(2);
+          expect(json.x).toHaveLength(2);
           expect(json.x[0].a).toBe('a0a');
           expect(json.x[0].b).toBe('b0b');
           expect(json.x[0].c).toBe('c0c');
@@ -329,7 +329,7 @@ describe('jyson.array.spec: an array in the template', () => {
           b: 'b'
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(2);
+        expect(json.a).toHaveLength(2);
         expect(json.a[0].a).toBe(0);
         expect(json.a[0].b).toBe('b');
         expect(json.a[1].a).toBe(1);
@@ -342,7 +342,7 @@ describe('jyson.array.spec: an array in the template', () => {
           a: [0, 1]
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(2);
+        expect(json.a).toHaveLength(2);
         expect(json.a[0].a).toBe(0);
         expect(json.a[0].b).toBe('b');
         expect(json.a[1].a).toBe(1);
@@ -366,7 +366,7 @@ describe('jyson.array.spec: an array in the template', () => {
           b: { b: 'b' }
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).toBe(2);
+        expect(json.a).toHaveLength(2);
         expect(json.a[0].a).toBe(0);
         expect(json.a[0].b).toBe('b');
         expect(json.a[1].a).toBe(1);
@@ -380,7 +380,7 @@ describe('jyson.array.spec: an array in the template', () => {
             b: { b: false },
           };
           const json = this.templateFunction(input);
-          expect(json.a.length).toBe(2);
+          expect(json.a).toHaveLength(2);
           expect(json.a[0].a).toBe(0);
           expect(json.a[0].b).toBe(false);
           expect(json.a[1].a).toBe(1);

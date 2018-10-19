@@ -27,12 +27,12 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     expect(json.b.b).toBe(input.b);
     expect(json.c).toBe(input.c);
 
-    expect(jsonKeys.length).toBe(2);
+    expect(jsonKeys).toHaveLength(2);
     expect(jsonKeys).not.toContain('a');
     expect(jsonKeys).toContain('b');
     expect(jsonKeys).toContain('c');
 
-    expect(jsonBKeys.length).toBe(1);
+    expect(jsonBKeys).toHaveLength(1);
     expect(jsonBKeys).toContain('b');
   });
 
@@ -49,12 +49,12 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     expect(json.b.b).toBeUndefined();
     expect(json.c).toBe(input.c);
 
-    expect(jsonKeys.length).toBe(3);
+    expect(jsonKeys).toHaveLength(3);
     expect(jsonKeys).toContain('a');
     expect(jsonKeys).toContain('b');
     expect(jsonKeys).toContain('c');
 
-    expect(jsonBKeys.length).toBe(0);
+    expect(jsonBKeys).toHaveLength(0);
     expect(jsonBKeys).not.toContain('b');
   });
 
@@ -71,12 +71,12 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     expect(json.b.b).toBe(input.b);
     expect(json.c).toBeUndefined();
 
-    expect(jsonKeys.length).toBe(2);
+    expect(jsonKeys).toHaveLength(2);
     expect(jsonKeys).toContain('a');
     expect(jsonKeys).toContain('b');
     expect(jsonKeys).not.toContain('c');
 
-    expect(jsonBKeys.length).toBe(1);
+    expect(jsonBKeys).toHaveLength(1);
     expect(jsonBKeys).toContain('b');
   });
 });

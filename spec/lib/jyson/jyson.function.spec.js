@@ -40,7 +40,7 @@ describe('jyson.function.spec: a function in the template', () => {
 
 
       expect(json.a).toBe(1);
-      expect(this.templateValueFunction.mock.calls.length).toBe(1);
+      expect(this.templateValueFunction.mock.calls).toHaveLength(1);
       expect(this.templateValueFunction.mock.calls[0][0]).toEqual({
         key: 'a',
         object: { a: 0 },
