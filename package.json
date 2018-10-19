@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
+    "test:verbose": "npm test -- --verbose",
     "test:watch": "npm test -- --watchAll",
     "test:lint": "./node_modules/.bin/eslint .",
     "report:coverage": "cat ./.coverage/lcov.info | ./node_modules/.bin/coveralls"

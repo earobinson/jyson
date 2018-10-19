@@ -13,5 +13,5 @@ notifications:
   email: false
 script:
   - npm run test:lint
-  - npm run test
+  - npm run test:verbose
   - npm run report:coverage
