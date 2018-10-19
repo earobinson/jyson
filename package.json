@@ -4,11 +4,10 @@
   "description": "A template engine for json.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\" --reporter mocha-multi-reporters --reporter-options configFile=./spec/spec.config.json",
-    "test:watch": "npm test -- --watch",
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "npm test -- --watchAll",
     "test:lint": "./node_modules/.bin/eslint .",
-    "test:coverage": "./node_modules/.bin/nyc --reporter=html --reporter=text npm test",
-    "report:coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls"
+    "report:coverage": "cat ./.coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -29,10 +28,9 @@
     "chai": "^4.0.0",
     "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
     "lodash.set": "^4.3.2",
-    "mocha": "^5.2.0",
-    "mocha-junit-reporter": "^1.18.0",
-    "mocha-multi-reporters": "^1.1.7",
     "nyc": "^13.1.0",
     "sinon": "^4.5.0",
     "sinon-chai": "^2.10.0"
@@ -44,5 +42,9 @@
   },
   "nyc": {
     "exclude": "**/*.spec.js"
+  },
+  "jest-junit": {
+    "outputDirectory": ".junit",
+    "outputName": "./test-results.xml"
   }
 }

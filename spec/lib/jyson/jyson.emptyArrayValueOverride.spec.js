@@ -1,7 +1,3 @@
-const chai = require('chai');
-
-const expect = chai.expect;
-
 const jyson = require('../../../lib/jyson');
 
 describe('jyson.emptyArrayValueOverride.spec', () => {
@@ -17,7 +13,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       });
     });
 
-    it('must convert an object to "json"', () => {
+    test('must convert an object to "json"', () => {
       const input = {
         a: [1],
         b: [2, 3],
@@ -28,10 +24,10 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       };
       const json = this.templateFunction(input);
 
-      expect(json).to.deep.equal(input);
+      expect(json).toEqual(input);
     });
 
-    it('must use the default emptyArrayValue for missing arrays', () => {
+    test('must use the default emptyArrayValue for missing arrays', () => {
       const input = {
         b: [2, 3],
         c: [3, 4, 5],
@@ -41,75 +37,90 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       };
       const json = this.templateFunction(input);
 
-      expect(json).to.deep.equal(Object.assign(input, { a: [] }));
+      expect(json).toEqual(Object.assign(input, { a: [] }));
     });
 
     describe('jyson.Array', () => {
       describe('emptyArrayValue', () => {
-        it('must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined', () => {
-          const input = {
-            a: [1],
-            c: [3, 4, 5],
-            d: [6, 7, 8, 9],
-            e: [10, 11, 12, 13, 14],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined',
+          () => {
+            const input = {
+              a: [1],
+              c: [3, 4, 5],
+              d: [6, 7, 8, 9],
+              e: [10, 11, 12, 13, 14],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json).to.deep.equal(Object.assign(input, { b: [] }));
-        });
+            expect(json).toEqual(Object.assign(input, { b: [] }));
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is null', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            d: [6, 7, 8, 9],
-            e: [10, 11, 12, 13, 14],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is null',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              d: [6, 7, 8, 9],
+              e: [10, 11, 12, 13, 14],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json).to.deep.equal(Object.assign(input, { c: null }));
-        });
+            expect(json).toEqual(Object.assign(input, { c: null }));
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is undefined', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            c: [4, 5, 6],
-            e: [10, 11, 12, 13, 14],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is undefined',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              c: [4, 5, 6],
+              e: [10, 11, 12, 13, 14],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json).to.deep.equal(input);
-        });
+            expect(json).toEqual(input);
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is a string', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            c: [4, 5, 6],
-            d: [6, 7, 8, 9],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is a string',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              c: [4, 5, 6],
+              d: [6, 7, 8, 9],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json).to.deep.equal(Object.assign(input, { e: 'missing' }));
-        });
+            expect(json).toEqual(Object.assign(input, { e: 'missing' }));
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is an array', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            c: [4, 5, 6],
-            d: [6, 7, 8, 9],
-            e: [10, 11, 12, 13, 14]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is an array',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              c: [4, 5, 6],
+              d: [6, 7, 8, 9],
+              e: [10, 11, 12, 13, 14]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json).to.deep.equal(Object.assign(input, { f: [] }));
-        });
+            expect(json).toEqual(Object.assign(input, { f: [] }));
+          }
+        );
       });
     });
   });
@@ -126,7 +137,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       });
     });
 
-    it('must convert an object to "json"', () => {
+    test('must convert an object to "json"', () => {
       const input = {
         a: [1],
         b: [2, 3],
@@ -137,7 +148,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       };
       const json = this.templateFunction(input);
 
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         a: [ { a: 1 } ],
         b: [ { b: 2 },  { b: 3 } ],
         c: [ { c: 3 },  { c: 4 },  { c: 5 } ],
@@ -147,7 +158,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       });
     });
 
-    it('must use the default emptyArrayValue for missing arrays', () => {
+    test('must use the default emptyArrayValue for missing arrays', () => {
       const input = {
         b: [2, 3],
         c: [3, 4, 5],
@@ -157,75 +168,90 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
       };
       const json = this.templateFunction(input);
 
-      expect(json.a).to.deep.equal([]);
+      expect(json.a).toEqual([]);
     });
 
     describe('jyson.Array', () => {
       describe('emptyArrayValue', () => {
-        it('must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined', () => {
-          const input = {
-            a: [1],
-            c: [3, 4, 5],
-            d: [6, 7, 8, 9],
-            e: [10, 11, 12, 13, 14],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined',
+          () => {
+            const input = {
+              a: [1],
+              c: [3, 4, 5],
+              d: [6, 7, 8, 9],
+              e: [10, 11, 12, 13, 14],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json.b).to.deep.equal([]);
-        });
+            expect(json.b).toEqual([]);
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is null', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            d: [6, 7, 8, 9],
-            e: [10, 11, 12, 13, 14],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is null',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              d: [6, 7, 8, 9],
+              e: [10, 11, 12, 13, 14],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json.c).to.be.null;
-        });
+            expect(json.c).toBeNull();
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is undefined', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            c: [4, 5, 6],
-            e: [10, 11, 12, 13, 14],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is undefined',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              c: [4, 5, 6],
+              e: [10, 11, 12, 13, 14],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json.d).to.be.undefined;
-        });
+            expect(json.d).toBeUndefined();
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is a string', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            c: [4, 5, 6],
-            d: [6, 7, 8, 9],
-            f: [15, 16, 17, 18, 19, 20]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is a string',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              c: [4, 5, 6],
+              d: [6, 7, 8, 9],
+              f: [15, 16, 17, 18, 19, 20]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json.e).to.equal('missing');
-        });
+            expect(json.e).toBe('missing');
+          }
+        );
 
-        it('must use emptyArrayValue for missing arrays when emptyArrayValue is an array', () => {
-          const input = {
-            a: [1],
-            b: [2, 3],
-            c: [4, 5, 6],
-            d: [6, 7, 8, 9],
-            e: [10, 11, 12, 13, 14]
-          };
-          const json = this.templateFunction(input);
+        test(
+          'must use emptyArrayValue for missing arrays when emptyArrayValue is an array',
+          () => {
+            const input = {
+              a: [1],
+              b: [2, 3],
+              c: [4, 5, 6],
+              d: [6, 7, 8, 9],
+              e: [10, 11, 12, 13, 14]
+            };
+            const json = this.templateFunction(input);
 
-          expect(json.f).to.deep.equal([]);
-        });
+            expect(json.f).toEqual([]);
+          }
+        );
       });
     });
   });

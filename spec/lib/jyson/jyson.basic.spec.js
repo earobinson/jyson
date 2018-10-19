@@ -1,7 +1,4 @@
 const assert = require('assert');
-const chai = require('chai');
-
-const expect = chai.expect;
 
 const jyson = require('./../../../lib/jyson');
 
@@ -14,7 +11,7 @@ describe('jyson.basic.spec: a basic template', () => {
     });
   });
 
-  it('must convert an object to "json"', () => {
+  test('must convert an object to "json"', () => {
     const input = {
       a: 1,
       b: 2,
@@ -22,12 +19,12 @@ describe('jyson.basic.spec: a basic template', () => {
     };
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b).to.equal(input.b);
-    expect(json.c).to.equal(input.c);
+    expect(json.a).toBe(input.a);
+    expect(json.b).toBe(input.b);
+    expect(json.c).toBe(input.c);
   });
 
-  it('must ignore additional values', () => {
+  test('must ignore additional values', () => {
     const input = {
       a: 1,
       b: 2,
@@ -36,21 +33,21 @@ describe('jyson.basic.spec: a basic template', () => {
     };
     const json = this.templateFunction(input);
 
-    expect(Object.keys(json)).to.include('a', 'b', 'c');
-    expect(Object.keys(json)).not.to.include('d', 'e');
+    expect(Object.keys(json)).toContain('a');
+    expect(Object.keys(json)).not.toContain('d');
   });
 
-  it('must use null for missing objects', () => {
+  test('must use null for missing objects', () => {
     const input = {
       a: 1,
       c: 3
     };
     const json = this.templateFunction(input);
 
-    expect(json.b).to.equal(null);
+    expect(json.b).toBeNull();
   });
 
-  it('must error if it encounters an unexpected array', () => {
+  test('must error if it encounters an unexpected array', () => {
     const input = {
       a: [1],
     };
@@ -59,12 +56,12 @@ describe('jyson.basic.spec: a basic template', () => {
       this.templateFunction(input);
       return Promise.reject('an error should have been thrown');
     } catch(error) {
-      expect(error).to.be.an.instanceOf(assert.AssertionError);
-      expect(error.message).to.equal('jyson encountered an array when it was not expecting one: a');
+      expect(error).toBeInstanceOf(assert.AssertionError);
+      expect(error.message).toBe('jyson encountered an array when it was not expecting one: a');
     }
   });
 
-  it('must convert arrays "json"', () => {
+  test('must convert arrays "json"', () => {
     const input = [
       { a:1 },
       { b:2 },
@@ -72,14 +69,14 @@ describe('jyson.basic.spec: a basic template', () => {
     ];
     const json = this.templateFunction(input);
 
-    expect(json).to.deep.equal([
+    expect(json).toEqual([
       { a:1, b:null, c:null },
       { a:null, b:2, c:null },
       { a:null, b:null, c:3 }
     ]);
   });
 
-  it('must convert deep arrays "json"', () => {
+  test('must convert deep arrays "json"', () => {
     this.templateFunction = jyson.buildTemplateFunction({
       a: { a: 'a.a' },
       b: { b: 'b.b' },
@@ -93,14 +90,14 @@ describe('jyson.basic.spec: a basic template', () => {
     ];
     const json = this.templateFunction(input);
 
-    expect(json).to.deep.equal([
+    expect(json).toEqual([
       { a:{ a:1 }, b:{ b: null }, c:{ c: null } },
       { a:{ a:null }, b:{ b: 2 }, c:{ c: null } },
       { a:{ a:null }, b:{ b: null }, c:{ c: 3 } }
     ]);
   });
 
-  it('must convert an object with properties "json"', () => {
+  test('must convert an object with properties "json"', () => {
     const input = {};
     Object.defineProperty(input, 'a', {
       get: () => { return 1; },
@@ -123,8 +120,8 @@ describe('jyson.basic.spec: a basic template', () => {
 
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(1);
-    expect(json.b).to.equal(2);
-    expect(json.c).to.equal(3);
+    expect(json.a).toBe(1);
+    expect(json.b).toBe(2);
+    expect(json.c).toBe(3);
   });
 });

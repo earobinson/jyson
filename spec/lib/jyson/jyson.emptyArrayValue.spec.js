@@ -1,7 +1,3 @@
-const chai = require('chai');
-
-const expect = chai.expect;
-
 const jyson = require('../../../lib/jyson');
 
 describe('jyson.emptyArrayValue.spec', () => {
@@ -15,34 +11,34 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      it('must resolve arrays', () => {
+      test('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [1, 2, 3]
         });
       });
 
-      it('must resolve an empty array', () => {
+      test('must resolve an empty array', () => {
         const input = {
           a: []
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
 
-      it('must resolve a missing array', () => {
+      test('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: null
         });
       });
@@ -57,34 +53,34 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      it('must resolve arrays', () => {
+      test('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [1, 2, 3]
         });
       });
 
-      it('must resolve an empty array', () => {
+      test('must resolve an empty array', () => {
         const input = {
           a: []
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
 
-      it('must resolve a missing array', () => {
+      test('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: 'empty array'
         });
       });
@@ -99,34 +95,34 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      it('must resolve arrays', () => {
+      test('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [1, 2, 3]
         });
       });
 
-      it('must resolve an empty array', () => {
+      test('must resolve an empty array', () => {
         const input = {
           a: []
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
 
-      it('must resolve a missing array', () => {
+      test('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
         });
       });
     });
@@ -142,34 +138,34 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      it('must resolve arrays', () => {
+      test('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [{ a: 1 }, { a: 2 }, { a: 3 }]
         });
       });
 
-      it('must resolve an empty array', () => {
+      test('must resolve an empty array', () => {
         const input = {
           a: []
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
 
-      it('must resolve a missing array', () => {
+      test('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: null
         });
       });
@@ -184,34 +180,34 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      it('must resolve arrays', () => {
+      test('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [{ a: 1 }, { a: 2 }, { a: 3 }]
         });
       });
 
-      it('must resolve an empty array', () => {
+      test('must resolve an empty array', () => {
         const input = {
           a: []
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
 
-      it('must resolve a missing array', () => {
+      test('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: 'empty array'
         });
       });
@@ -226,34 +222,34 @@ describe('jyson.emptyArrayValue.spec', () => {
         });
       });
 
-      it('must resolve arrays', () => {
+      test('must resolve arrays', () => {
         const input = {
           a: [1, 2, 3]
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [{ a: 1 }, { a: 2 }, { a: 3 }]
         });
       });
 
-      it('must resolve an empty array', () => {
+      test('must resolve an empty array', () => {
         const input = {
           a: []
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
 
-      it('must resolve a missing array', () => {
+      test('must resolve a missing array', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
         });
       });
     });

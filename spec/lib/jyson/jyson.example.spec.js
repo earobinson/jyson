@@ -1,7 +1,3 @@
-const chai = require('chai');
-
-const expect = chai.expect;
-
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.example.spec: an example', () => {
@@ -17,7 +13,7 @@ describe('jyson.example.spec: an example', () => {
     });
   });
 
-  it('must output example "json"', () => {
+  test('must output example "json"', () => {
     const input = {
       name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
       meta: {
@@ -34,22 +30,20 @@ describe('jyson.example.spec: an example', () => {
 
     const json = this.productTemplateFunction(input, { dateRan: 1496351371149 });
 
-    expect(json).to.deep.equal(
-      {
-        name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
-        tags:[
-          'lactobacillus bulgaricus',
-          'enterocococcus thermophilus',
-          'lactobacillus acidophilus',
-          'bifidobacterium bifidum',
-          'lactobacillus casei'
-        ],
-        other: {
-          dogRating: 10,
-          exampleMissingValue: null,
-          dateRan: 1496351371149
-        }
+    expect(json).toEqual({
+      name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
+      tags:[
+        'lactobacillus bulgaricus',
+        'enterocococcus thermophilus',
+        'lactobacillus acidophilus',
+        'bifidobacterium bifidum',
+        'lactobacillus casei'
+      ],
+      other: {
+        dogRating: 10,
+        exampleMissingValue: null,
+        dateRan: 1496351371149
       }
-    );
+    });
   });
 });

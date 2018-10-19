@@ -1,7 +1,4 @@
 const set = require('lodash.set');
-const chai = require('chai');
-
-const expect = chai.expect;
 
 const jyson = require('./../../../lib/jyson');
 
@@ -16,7 +13,7 @@ describe('jyson.array.spec: an array in the template', () => {
     });
 
     describe('simple arrays', () => {
-      it('must convert an object to json', () => {
+      test('must convert an object to json', () => {
         const input = {
           a: [1],
           b: [2, 3],
@@ -24,30 +21,30 @@ describe('jyson.array.spec: an array in the template', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json.a).to.have.ordered.members(input.a);
-        expect(json.a).to.have.lengthOf(input.a.length);
-        expect(json.b).to.have.ordered.members(input.b);
-        expect(json.b).to.have.lengthOf(input.b.length);
-        expect(json.c).to.have.ordered.members(input.c);
-        expect(json.c).to.have.lengthOf(input.c.length);
+        expect(json.a).toEqual(input.a);
+        expect(json.a).toHaveLength(input.a.length);
+        expect(json.b).toEqual(input.b);
+        expect(json.b).toHaveLength(input.b.length);
+        expect(json.c).toEqual(input.c);
+        expect(json.c).toHaveLength(input.c.length);
       });
 
-      it('must convert an object to json when the array is not provided', () => {
+      test('must convert an object to json when the array is not provided', () => {
         const input = {
         };
         const json = this.templateFunction(input);
 
-        expect(json.a).to.deep.equal([]);
-        expect(json.a).to.have.lengthOf(0);
-        expect(json.b).to.deep.equal([]);
-        expect(json.b).to.have.lengthOf(0);
-        expect(json.c).to.deep.equal([]);
-        expect(json.c).to.have.lengthOf(0);
+        expect(json.a).toEqual([]);
+        expect(json.a).toHaveLength(0);
+        expect(json.b).toEqual([]);
+        expect(json.b).toHaveLength(0);
+        expect(json.c).toEqual([]);
+        expect(json.c).toHaveLength(0);
       });
     });
 
     describe('complex arrays', () => {
-      it('must convert an object to json', () => {
+      test('must convert an object to json', () => {
         const input = {
           a: [1],
           b: [2, 3],
@@ -58,12 +55,12 @@ describe('jyson.array.spec: an array in the template', () => {
 
         const json = this.templateFunction(input);
 
-        expect(json.a).to.have.ordered.members([1]);
-        expect(json.a).to.have.lengthOf(input.a.length);
-        expect(json.b).to.have.ordered.members(input.b);
-        expect(json.b).to.have.lengthOf(input.b.length);
-        expect(json.c).to.have.ordered.members(input.c);
-        expect(json.c).to.have.lengthOf(input.c.length);
+        expect(json.a).toEqual(expect.arrayContaining([1]));
+        expect(json.a).toHaveLength(input.a.length);
+        expect(json.b).toEqual(input.b);
+        expect(json.b).toHaveLength(input.b.length);
+        expect(json.c).toEqual(input.c);
+        expect(json.c).toHaveLength(input.c.length);
       });
     });
   });
@@ -80,7 +77,7 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      it('must convert an object to json', () => {
+      test('must convert an object to json', () => {
         const input = {
           a: [
             {
@@ -95,16 +92,16 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].a).to.equal('a0a');
-        expect(json.a[0].b).to.equal('a0b');
-        expect(json.a[0].c).to.equal('a0c');
-        expect(json.a[1].a).to.equal('a1a');
-        expect(json.a[1].b).to.equal('a1b');
-        expect(json.a[1].c).to.equal('a1c');
+        expect(json.a.length).toBe(2);
+        expect(json.a[0].a).toBe('a0a');
+        expect(json.a[0].b).toBe('a0b');
+        expect(json.a[0].c).toBe('a0c');
+        expect(json.a[1].a).toBe('a1a');
+        expect(json.a[1].b).toBe('a1b');
+        expect(json.a[1].c).toBe('a1c');
       });
 
-      it('must handle undefined values when converting an object to json', () => {
+      test('must handle undefined values when converting an object to json', () => {
         const input = {
           a: [
             {
@@ -118,16 +115,16 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].a).to.equal('a0a');
-        expect(json.a[0].b).to.equal(null);
-        expect(json.a[0].c).to.equal('a0c');
-        expect(json.a[1].a).to.equal('a1a');
-        expect(json.a[1].b).to.equal('a1b');
-        expect(json.a[1].c).to.equal('a1c');
+        expect(json.a.length).toBe(2);
+        expect(json.a[0].a).toBe('a0a');
+        expect(json.a[0].b).toBeNull();
+        expect(json.a[0].c).toBe('a0c');
+        expect(json.a[1].a).toBe('a1a');
+        expect(json.a[1].b).toBe('a1b');
+        expect(json.a[1].c).toBe('a1c');
       });
 
-      it('must convert an object of length 10 to json', () => {
+      test('must convert an object of length 10 to json', () => {
         const input = {
           a: [
             {
@@ -174,11 +171,11 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(10);
+        expect(json.a.length).toBe(10);
         for(let ii = 0; ii < 10; ii++) {
-          expect(json.a[ii].a).to.equal(`a${ii}a`);
-          expect(json.a[ii].b).to.equal(`a${ii}b`);
-          expect(json.a[ii].c).to.equal(`a${ii}c`);
+          expect(json.a[ii].a).toBe(`a${ii}a`);
+          expect(json.a[ii].b).toBe(`a${ii}b`);
+          expect(json.a[ii].c).toBe(`a${ii}c`);
         }
       });
     });
@@ -194,7 +191,7 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      it('must convert an object to json of length one', () => {
+      test('must convert an object to json of length one', () => {
         const input = {
           a: [
             {
@@ -206,12 +203,12 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(1);
-        expect(json.a[0].b.c).to.equal('easy as 123');
-        expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
+        expect(json.a.length).toBe(1);
+        expect(json.a[0].b.c).toBe('easy as 123');
+        expect(Object.keys(json.a[0].b)).toEqual(expect.arrayContaining(['c']));
       });
 
-      it('must convert an object to json of length two', () => {
+      test('must convert an object to json of length two', () => {
         const input = {
           a: [
             {
@@ -228,11 +225,11 @@ describe('jyson.array.spec: an array in the template', () => {
           ],
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].b.c).to.equal('easy as 123');
-        expect(json.a[1].b.c).to.equal('EASY AS 123');
-        expect(Object.keys(json.a[0].b)).to.have.ordered.members(['c']);
-        expect(Object.keys(json.a[1].b)).to.have.ordered.members(['c']);
+        expect(json.a.length).toBe(2);
+        expect(json.a[0].b.c).toBe('easy as 123');
+        expect(json.a[1].b.c).toBe('EASY AS 123');
+        expect(Object.keys(json.a[0].b)).toEqual(expect.arrayContaining(['c']));
+        expect(Object.keys(json.a[1].b)).toEqual(expect.arrayContaining(['c']));
       });
     });
 
@@ -248,7 +245,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
 
       describe('when all the arrays are the same length', () => {
-        it('must convert an object to json', () => {
+        test('must convert an object to json', () => {
           const input = {
             a: [
               {
@@ -273,18 +270,18 @@ describe('jyson.array.spec: an array in the template', () => {
             ],
           };
           const json = this.templateFunction(input);
-          expect(json.x.length).to.equal(2);
-          expect(json.x[0].a).to.equal('a0a');
-          expect(json.x[0].b).to.equal('b0b');
-          expect(json.x[0].c).to.equal('c0c');
-          expect(json.x[1].a).to.equal('a1a');
-          expect(json.x[1].b).to.equal('b1b');
-          expect(json.x[1].c).to.equal('c1c');
+          expect(json.x.length).toBe(2);
+          expect(json.x[0].a).toBe('a0a');
+          expect(json.x[0].b).toBe('b0b');
+          expect(json.x[0].c).toBe('c0c');
+          expect(json.x[1].a).toBe('a1a');
+          expect(json.x[1].b).toBe('b1b');
+          expect(json.x[1].c).toBe('c1c');
         });
       });
 
       describe('when one of the arrays is longer than the others', () => {
-        it('must convert an object to json', () => {
+        test('must convert an object to json', () => {
           const input = {
             a: [
               {
@@ -305,13 +302,13 @@ describe('jyson.array.spec: an array in the template', () => {
             ],
           };
           const json = this.templateFunction(input);
-          expect(json.x.length).to.equal(2);
-          expect(json.x[0].a).to.equal('a0a');
-          expect(json.x[0].b).to.equal('b0b');
-          expect(json.x[0].c).to.equal('c0c');
-          expect(json.x[1].a).to.equal('a1a');
-          expect(json.x[1].b).to.equal(null);
-          expect(json.x[1].c).to.equal(null);
+          expect(json.x.length).toBe(2);
+          expect(json.x[0].a).toBe('a0a');
+          expect(json.x[0].b).toBe('b0b');
+          expect(json.x[0].c).toBe('c0c');
+          expect(json.x[1].a).toBe('a1a');
+          expect(json.x[1].b).toBeNull();
+          expect(json.x[1].c).toBeNull();
         });
       });
     });
@@ -326,30 +323,30 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      it('must convert an object to json', () => {
+      test('must convert an object to json', () => {
         const input = {
           a: [0, 1],
           b: 'b'
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].a).to.equal(0);
-        expect(json.a[0].b).to.equal('b');
-        expect(json.a[1].a).to.equal(1);
-        expect(json.a[0].b).to.equal('b');
+        expect(json.a.length).toBe(2);
+        expect(json.a[0].a).toBe(0);
+        expect(json.a[0].b).toBe('b');
+        expect(json.a[1].a).toBe(1);
+        expect(json.a[0].b).toBe('b');
       });
 
-      it('must convert an object to json when the order is reversed', () => {
+      test('must convert an object to json when the order is reversed', () => {
         const input = {
           b: 'b',
           a: [0, 1]
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].a).to.equal(0);
-        expect(json.a[0].b).to.equal('b');
-        expect(json.a[1].a).to.equal(1);
-        expect(json.a[0].b).to.equal('b');
+        expect(json.a.length).toBe(2);
+        expect(json.a[0].a).toBe(0);
+        expect(json.a[0].b).toBe('b');
+        expect(json.a[1].a).toBe(1);
+        expect(json.a[0].b).toBe('b');
       });
     });
 
@@ -363,31 +360,34 @@ describe('jyson.array.spec: an array in the template', () => {
         });
       });
 
-      it('must convert an object to json', () => {
+      test('must convert an object to json', () => {
         const input = {
           a: [{ a: 0 }, { a: 1 }],
           b: { b: 'b' }
         };
         const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].a).to.equal(0);
-        expect(json.a[0].b).to.equal('b');
-        expect(json.a[1].a).to.equal(1);
-        expect(json.a[0].b).to.equal('b');
+        expect(json.a.length).toBe(2);
+        expect(json.a[0].a).toBe(0);
+        expect(json.a[0].b).toBe('b');
+        expect(json.a[1].a).toBe(1);
+        expect(json.a[0].b).toBe('b');
       });
 
-      it('must convert an object to json when the non array value does not have a length', () => {
-        const input = {
-          a: [{ a: 0 }, { a: 1 }],
-          b: { b: false },
-        };
-        const json = this.templateFunction(input);
-        expect(json.a.length).to.equal(2);
-        expect(json.a[0].a).to.equal(0);
-        expect(json.a[0].b).to.equal(false);
-        expect(json.a[1].a).to.equal(1);
-        expect(json.a[0].b).to.equal(false);
-      });
+      test(
+        'must convert an object to json when the non array value does not have a length',
+        () => {
+          const input = {
+            a: [{ a: 0 }, { a: 1 }],
+            b: { b: false },
+          };
+          const json = this.templateFunction(input);
+          expect(json.a.length).toBe(2);
+          expect(json.a[0].a).toBe(0);
+          expect(json.a[0].b).toBe(false);
+          expect(json.a[1].a).toBe(1);
+          expect(json.a[0].b).toBe(false);
+        }
+      );
     });
   });
 
@@ -404,7 +404,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    it('must convert an object to json', () => {
+    test('must convert an object to json', () => {
       const input = {
         a: [{
           b: [{
@@ -415,7 +415,7 @@ describe('jyson.array.spec: an array in the template', () => {
         }]
       };
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         e: [{
           f: [{
             g: [{
@@ -426,39 +426,39 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    it('must handle a missing a', () => {
+    test('must handle a missing a', () => {
       const input = {};
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         e: []
       });
     });
 
-    it('must handle an empty a array', () => {
+    test('must handle an empty a array', () => {
       const input = {
         a: []
       };
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         e: []
       });
     });
 
-    it('must handle an empty b array', () => {
+    test('must handle an empty b array', () => {
       const input = {
         a: [{
           b: []
         }]
       };
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         e: [{
           f: []
         }]
       });
     });
 
-    it('must handle an empty c array', () => {
+    test('must handle an empty c array', () => {
       const input = {
         a: [{
           b: [{
@@ -467,7 +467,7 @@ describe('jyson.array.spec: an array in the template', () => {
         }]
       };
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         e: [{
           f: [{
             g: []
@@ -476,7 +476,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    it('must handle a missing empty d', () => {
+    test('must handle a missing empty d', () => {
       const input = {
         a: [{
           b: [{
@@ -485,7 +485,7 @@ describe('jyson.array.spec: an array in the template', () => {
         }]
       };
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal({
+      expect(json).toEqual({
         e: [{
           f: [{
             g: [{
@@ -496,7 +496,7 @@ describe('jyson.array.spec: an array in the template', () => {
       });
     });
 
-    it('must convert an object with many arrays to json', () => {
+    test('must convert an object with many arrays to json', () => {
       const input = {};
       const output = {};
       const arrayLengths = 10;
@@ -513,7 +513,7 @@ describe('jyson.array.spec: an array in the template', () => {
       }
 
       const json = this.templateFunction(input);
-      expect(json).to.deep.equal(output);
+      expect(json).toEqual(output);
     });
   });
 });

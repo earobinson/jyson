@@ -46,9 +46,11 @@ jobs:
 
       # Test results
       - store_test_results:
-          path: ~/repo/junit
+          path: ~/repo/.junit
       - store_artifacts:
-          path: ~/repo/junit
+          path: ~/repo/.junit
+      - store_artifacts:
+          path: ~/repo/.coverage
 
   node-v8:
     <<: *node-base

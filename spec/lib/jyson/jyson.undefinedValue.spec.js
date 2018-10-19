@@ -1,7 +1,3 @@
-const chai = require('chai');
-
-const expect = chai.expect;
-
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.undefinedValue.spec: basic undefined', () => {
@@ -18,7 +14,7 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     });
   });
 
-  it('must handle missing basic values', () => {
+  test('must handle missing basic values', () => {
     const input = {
       b: 2,
       c: 3
@@ -27,20 +23,20 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     const jsonKeys = Object.keys(json);
     const jsonBKeys = Object.keys(json.b);
 
-    expect(json.a).be.undefined;
-    expect(json.b.b).to.equal(input.b);
-    expect(json.c).to.equal(input.c);
+    expect(json.a).toBeUndefined();
+    expect(json.b.b).toBe(input.b);
+    expect(json.c).toBe(input.c);
 
-    expect(jsonKeys.length).to.equal(2);
-    expect(jsonKeys).not.to.include('a');
-    expect(jsonKeys).to.include('b');
-    expect(jsonKeys).to.include('c');
+    expect(jsonKeys.length).toBe(2);
+    expect(jsonKeys).not.toContain('a');
+    expect(jsonKeys).toContain('b');
+    expect(jsonKeys).toContain('c');
 
-    expect(jsonBKeys.length).to.equal(1);
-    expect(jsonBKeys).to.include('b');
+    expect(jsonBKeys.length).toBe(1);
+    expect(jsonBKeys).toContain('b');
   });
 
-  it('must handle missing nested values', () => {
+  test('must handle missing nested values', () => {
     const input = {
       a: 1,
       c: 3
@@ -49,20 +45,20 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     const jsonKeys = Object.keys(json);
     const jsonBKeys = Object.keys(json.b);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b.b).to.be.undefined;
-    expect(json.c).to.equal(input.c);
+    expect(json.a).toBe(input.a);
+    expect(json.b.b).toBeUndefined();
+    expect(json.c).toBe(input.c);
 
-    expect(jsonKeys.length).to.equal(3);
-    expect(jsonKeys).to.include('a');
-    expect(jsonKeys).to.include('b');
-    expect(jsonKeys).to.include('c');
+    expect(jsonKeys.length).toBe(3);
+    expect(jsonKeys).toContain('a');
+    expect(jsonKeys).toContain('b');
+    expect(jsonKeys).toContain('c');
 
-    expect(jsonBKeys.length).to.equal(0);
-    expect(jsonBKeys).not.to.include('b');
+    expect(jsonBKeys.length).toBe(0);
+    expect(jsonBKeys).not.toContain('b');
   });
 
-  it('must handle missing function values', () => {
+  test('must handle missing function values', () => {
     const input = {
       a: 1,
       b: 2
@@ -71,17 +67,17 @@ describe('jyson.undefinedValue.spec: basic undefined', () => {
     const jsonKeys = Object.keys(json);
     const jsonBKeys = Object.keys(json.b);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b.b).to.equal(input.b);
-    expect(json.c).to.be.undefined;
+    expect(json.a).toBe(input.a);
+    expect(json.b.b).toBe(input.b);
+    expect(json.c).toBeUndefined();
 
-    expect(jsonKeys.length).to.equal(2);
-    expect(jsonKeys).to.include('a');
-    expect(jsonKeys).to.include('b');
-    expect(jsonKeys).not.to.include('c');
+    expect(jsonKeys.length).toBe(2);
+    expect(jsonKeys).toContain('a');
+    expect(jsonKeys).toContain('b');
+    expect(jsonKeys).not.toContain('c');
 
-    expect(jsonBKeys.length).to.equal(1);
-    expect(jsonBKeys).to.include('b');
+    expect(jsonBKeys.length).toBe(1);
+    expect(jsonBKeys).toContain('b');
   });
 });
 
@@ -98,39 +94,39 @@ describe('jyson.undefinedValue.spec: string undefined', () => {
     });
   });
 
-  it('must handle missing basic values', () => {
+  test('must handle missing basic values', () => {
     const input = {
       b: 2,
       c: 3
     };
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal('MISSING');
-    expect(json.b.b).to.equal(input.b);
-    expect(json.c).to.equal(input.c);
+    expect(json.a).toBe('MISSING');
+    expect(json.b.b).toBe(input.b);
+    expect(json.c).toBe(input.c);
   });
 
-  it('must handle missing nested values', () => {
+  test('must handle missing nested values', () => {
     const input = {
       a: 1,
       c: 3
     };
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b.b).to.equal('MISSING');
-    expect(json.c).to.equal(input.c);
+    expect(json.a).toBe(input.a);
+    expect(json.b.b).toBe('MISSING');
+    expect(json.c).toBe(input.c);
   });
 
-  it('must handle missing function values', () => {
+  test('must handle missing function values', () => {
     const input = {
       a: 1,
       b: 2
     };
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b.b).to.equal(input.b);
-    expect(json.c).to.equal('MISSING');
+    expect(json.a).toBe(input.a);
+    expect(json.b.b).toBe(input.b);
+    expect(json.c).toBe('MISSING');
   });
 });
