@@ -1,7 +1,3 @@
-const chai = require('chai');
-
-const expect = chai.expect;
-
 const jyson = require('../../../lib/jyson');
 
 describe('jyson.emptyArrayValue.spec', () => {
@@ -21,7 +17,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [1, 2, 3]
         });
       });
@@ -32,7 +28,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
@@ -42,7 +38,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: null
         });
       });
@@ -63,7 +59,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [1, 2, 3]
         });
       });
@@ -74,7 +70,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
@@ -84,7 +80,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: 'empty array'
         });
       });
@@ -105,7 +101,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [1, 2, 3]
         });
       });
@@ -116,7 +112,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
@@ -126,7 +122,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
         });
       });
     });
@@ -148,7 +144,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [{ a: 1 }, { a: 2 }, { a: 3 }]
         });
       });
@@ -159,7 +155,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
@@ -169,7 +165,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: null
         });
       });
@@ -190,7 +186,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [{ a: 1 }, { a: 2 }, { a: 3 }]
         });
       });
@@ -201,7 +197,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
@@ -211,7 +207,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: 'empty array'
         });
       });
@@ -232,7 +228,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: [{ a: 1 }, { a: 2 }, { a: 3 }]
         });
       });
@@ -243,7 +239,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
           a: []
         });
       });
@@ -253,7 +249,7 @@ describe('jyson.emptyArrayValue.spec', () => {
         };
         const json = this.templateFunction(input);
 
-        expect(json).to.deep.equal({
+        expect(json).toEqual({
         });
       });
     });

@@ -16,6 +16,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+.coverage
 
 # nyc test coverage
 .nyc_output
@@ -64,5 +65,5 @@ typings/
 .DS_Store
 
 # Test results
-junit
+.test-results
 .nyc_output

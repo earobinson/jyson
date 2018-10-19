@@ -1,7 +1,3 @@
-const chai = require('chai');
-
-const expect = chai.expect;
-
 const jyson = require('../../../lib/jyson');
 
 describe('jysonArray.spec', () => {
@@ -11,7 +7,7 @@ describe('jysonArray.spec', () => {
         new jyson.Array();
         return Promise.reject('an error should have been thrown');
       } catch(error) {
-        expect(error.message).to.equal('JsonArray requires a value');
+        expect(error.message).toBe('JsonArray requires a value');
       }
     });
   });

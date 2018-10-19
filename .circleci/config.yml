@@ -41,14 +41,16 @@ jobs:
 
       # run tests!
       - run: npm run test:lint
-      - run: npm run test:coverage
+      - run: npm run test:verbose
       - run: npm run report:coverage
 
       # Test results
       - store_test_results:
-          path: ~/repo/junit
+          path: ~/repo/.test-results/jest
       - store_artifacts:
-          path: ~/repo/junit
+          path: ~/repo/.test-results
+      - store_artifacts:
+          path: ~/repo/.coverage
 
   node-v8:
     <<: *node-base

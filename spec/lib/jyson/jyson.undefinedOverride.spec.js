@@ -1,7 +1,4 @@
 const assert = require('assert');
-const chai = require('chai');
-
-const expect = chai.expect;
 
 const jyson = require('../../../lib/jyson');
 
@@ -24,57 +21,65 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
     };
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b).to.equal(input.b);
-    expect(json.c).to.equal(input.c);
-    expect(json.d).to.equal(input.d);
+    expect(json.a).toBe(input.a);
+    expect(json.b).toBe(input.b);
+    expect(json.c).toBe(input.c);
+    expect(json.d).toBe(input.d);
   });
 
   describe('jyson.Value', () => {
     describe('undefinedValue', () => {
-      it('must use undefinedValue for missing objects when undefined is null', () => {
-        const input = {
-          a: 1,
-          c: 3,
-          d: 4
-        };
-        const json = this.templateFunction(input);
+      it('must use undefinedValue for missing objects when undefined is null',
+        () => {
+          const input = {
+            a: 1,
+            c: 3,
+            d: 4
+          };
+          const json = this.templateFunction(input);
 
-        expect(json.b).to.equal(null);
-      });
+          expect(json.b).toBeNull();
+        }
+      );
 
-      it('must use undefinedValue for missing objects when undefined is undefined', () => {
-        const input = {
-          a: 1,
-          b: 2,
-          d: 4
-        };
-        const json = this.templateFunction(input);
+      it('must use undefinedValue for missing objects when undefined is undefined',
+        () => {
+          const input = {
+            a: 1,
+            b: 2,
+            d: 4
+          };
+          const json = this.templateFunction(input);
 
-        expect(json.c).to.equal(undefined);
-      });
+          expect(json.c).toBeUndefined();
+        }
+      );
 
-      it('must use undefinedValue for missing objects when undefined is custom', () => {
-        const input = {
-          b: 2,
-          c: 3,
-          d: 4
-        };
-        const json = this.templateFunction(input);
+      it('must use undefinedValue for missing objects when undefined is custom',
+        () => {
+          const input = {
+            b: 2,
+            c: 3,
+            d: 4
+          };
+          const json = this.templateFunction(input);
 
-        expect(json.a).to.equal('qwerty');
-      });
+          expect(json.a).toBe('qwerty');
+        }
+      );
 
-      it('must use the default undefinedValue if no custom undefinedValue is defined', () => {
-        const input = {
-          a: 1,
-          b: 2,
-          c: 3
-        };
-        const json = this.templateFunction(input);
+      it('must use the default undefinedValue if no custom undefinedValue is defined',
+        () => {
+          const input = {
+            a: 1,
+            b: 2,
+            c: 3
+          };
+          const json = this.templateFunction(input);
 
-        expect(json.d).to.equal(null);
-      });
+          expect(json.d).toBeNull();
+        }
+      );
     });
 
     describe('path', () => {
@@ -90,8 +95,8 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
           templateFunction(input);
           return Promise.reject('an error should have been thrown');
         } catch(error) {
-          expect(error).to.be.an.instanceOf(assert.AssertionError);
-          expect(error.message).to.equal('JsonValue requires a path');
+          expect(error).toBeInstanceOf(assert.AssertionError);
+          expect(error.message).toBe('JsonValue requires a path');
         }
       });
     });

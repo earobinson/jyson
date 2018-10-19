@@ -1,7 +1,4 @@
 const assert = require('assert');
-const chai = require('chai');
-
-const expect = chai.expect;
 
 const jyson = require('./../../../lib/jyson');
 
@@ -22,9 +19,9 @@ describe('jyson.basic.spec: a basic template', () => {
     };
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(input.a);
-    expect(json.b).to.equal(input.b);
-    expect(json.c).to.equal(input.c);
+    expect(json.a).toBe(input.a);
+    expect(json.b).toBe(input.b);
+    expect(json.c).toBe(input.c);
   });
 
   it('must ignore additional values', () => {
@@ -36,8 +33,8 @@ describe('jyson.basic.spec: a basic template', () => {
     };
     const json = this.templateFunction(input);
 
-    expect(Object.keys(json)).to.include('a', 'b', 'c');
-    expect(Object.keys(json)).not.to.include('d', 'e');
+    expect(Object.keys(json)).toContain('a');
+    expect(Object.keys(json)).not.toContain('d');
   });
 
   it('must use null for missing objects', () => {
@@ -47,7 +44,7 @@ describe('jyson.basic.spec: a basic template', () => {
     };
     const json = this.templateFunction(input);
 
-    expect(json.b).to.equal(null);
+    expect(json.b).toBeNull();
   });
 
   it('must error if it encounters an unexpected array', () => {
@@ -59,8 +56,8 @@ describe('jyson.basic.spec: a basic template', () => {
       this.templateFunction(input);
       return Promise.reject('an error should have been thrown');
     } catch(error) {
-      expect(error).to.be.an.instanceOf(assert.AssertionError);
-      expect(error.message).to.equal('jyson encountered an array when it was not expecting one: a');
+      expect(error).toBeInstanceOf(assert.AssertionError);
+      expect(error.message).toBe('jyson encountered an array when it was not expecting one: a');
     }
   });
 
@@ -72,7 +69,7 @@ describe('jyson.basic.spec: a basic template', () => {
     ];
     const json = this.templateFunction(input);
 
-    expect(json).to.deep.equal([
+    expect(json).toEqual([
       { a:1, b:null, c:null },
       { a:null, b:2, c:null },
       { a:null, b:null, c:3 }
@@ -93,7 +90,7 @@ describe('jyson.basic.spec: a basic template', () => {
     ];
     const json = this.templateFunction(input);
 
-    expect(json).to.deep.equal([
+    expect(json).toEqual([
       { a:{ a:1 }, b:{ b: null }, c:{ c: null } },
       { a:{ a:null }, b:{ b: 2 }, c:{ c: null } },
       { a:{ a:null }, b:{ b: null }, c:{ c: 3 } }
@@ -123,8 +120,8 @@ describe('jyson.basic.spec: a basic template', () => {
 
     const json = this.templateFunction(input);
 
-    expect(json.a).to.equal(1);
-    expect(json.b).to.equal(2);
-    expect(json.c).to.equal(3);
+    expect(json.a).toBe(1);
+    expect(json.b).toBe(2);
+    expect(json.c).toBe(3);
   });
 });
