@@ -7,9 +7,6 @@ This package lets you generate fast json templates for your apis. It lets you qu
 [![Coveralls](https://img.shields.io/coveralls/github/hubba/jyson.svg)](https://coveralls.io/github/hubba/jyson)
 [![NPM Downloads](https://img.shields.io/npm/dm/jyson.svg)](https://www.npmjs.com/package/jyson)
 
-"test": "./node_modules/.bin/mocha -R spec --recursive \"./spec/**/*.spec.js\" --reporter mocha-multi-reporters --reporter-options configFile=./spec/spec.config.json",
-    "test:watch": "npm test -- --watch",
-
 ## Install
 ```bash
 npm install jyson --save
