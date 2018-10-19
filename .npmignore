@@ -75,6 +75,6 @@ CONTRIBUTING.md
 # Tests
 spec
 *.spec.js
-.junit
+.test-results
 .nyc_output
 .jest.config.js

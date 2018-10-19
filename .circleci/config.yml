@@ -46,9 +46,9 @@ jobs:
 
       # Test results
       - store_test_results:
-          path: ~/repo/.junit
+          path: ~/repo/.test-results
       - store_artifacts:
-          path: ~/repo/.junit
+          path: ~/repo/.test-results
       - store_artifacts:
           path: ~/repo/.coverage
 

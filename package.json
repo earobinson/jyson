@@ -37,7 +37,7 @@
     "lodash.isfunction": "^3.0.9"
   },
   "jest-junit": {
-    "outputDirectory": ".junit",
-    "outputName": "./test-results.xml"
+    "outputDirectory": "./.test-results/jest",
+    "outputName": "results.xml"
   }
 }

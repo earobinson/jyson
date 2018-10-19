@@ -1,0 +1,204 @@
+<testsuites name="jest tests" tests="87" failures="0" time="1.69">
+  <testsuite name="jyson.basic.spec: a basic template" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.777" tests="7">
+    <testcase classname="jyson.basic.spec: a basic template must convert an object to &quot;json&quot;" name="jyson.basic.spec: a basic template must convert an object to &quot;json&quot;" time="0.015">
+    </testcase>
+    <testcase classname="jyson.basic.spec: a basic template must ignore additional values" name="jyson.basic.spec: a basic template must ignore additional values" time="0.002">
+    </testcase>
+    <testcase classname="jyson.basic.spec: a basic template must use null for missing objects" name="jyson.basic.spec: a basic template must use null for missing objects" time="0.001">
+    </testcase>
+    <testcase classname="jyson.basic.spec: a basic template must error if it encounters an unexpected array" name="jyson.basic.spec: a basic template must error if it encounters an unexpected array" time="0.002">
+    </testcase>
+    <testcase classname="jyson.basic.spec: a basic template must convert arrays &quot;json&quot;" name="jyson.basic.spec: a basic template must convert arrays &quot;json&quot;" time="0.004">
+    </testcase>
+    <testcase classname="jyson.basic.spec: a basic template must convert deep arrays &quot;json&quot;" name="jyson.basic.spec: a basic template must convert deep arrays &quot;json&quot;" time="0.004">
+    </testcase>
+    <testcase classname="jyson.basic.spec: a basic template must convert an object with properties &quot;json&quot;" name="jyson.basic.spec: a basic template must convert an object with properties &quot;json&quot;" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.nesting.spec: a template with nesting" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.766" tests="1">
+    <testcase classname="jyson.nesting.spec: a template with nesting must convert an object to &quot;json&quot;" name="jyson.nesting.spec: a template with nesting must convert an object to &quot;json&quot;" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.emptyArrayValue.spec" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.792" tests="18">
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is null must resolve arrays" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is null must resolve arrays" time="0.015">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is null must resolve an empty array" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is null must resolve an empty array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is null must resolve a missing array" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is null must resolve a missing array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is a string must resolve arrays" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is a string must resolve arrays" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is a string must resolve an empty array" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is a string must resolve an empty array" time="0.003">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is a string must resolve a missing array" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is a string must resolve a missing array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is undefined must resolve arrays" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is undefined must resolve arrays" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is undefined must resolve an empty array" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is undefined must resolve an empty array" time="0.005">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is undefined must resolve a missing array" name="jyson.emptyArrayValue.spec template arrays defined by strings emptyArrayValue is undefined must resolve a missing array" time="0">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is null must resolve arrays" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is null must resolve arrays" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is null must resolve an empty array" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is null must resolve an empty array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is null must resolve a missing array" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is null must resolve a missing array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is an object must resolve arrays" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is an object must resolve arrays" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is an object must resolve an empty array" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is an object must resolve an empty array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is an object must resolve a missing array" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is an object must resolve a missing array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is undefined must resolve arrays" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is undefined must resolve arrays" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is undefined must resolve an empty array" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is undefined must resolve an empty array" time="0.008">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is undefined must resolve a missing array" name="jyson.emptyArrayValue.spec template arrays defined by an object emptyArrayValue is undefined must resolve a missing array" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.emptyArrayValueOverride.spec" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.796" tests="14">
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings must convert an object to &quot;json&quot;" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings must convert an object to &quot;json&quot;" time="0.022">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings must use the default emptyArrayValue for missing arrays" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings must use the default emptyArrayValue for missing arrays" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is null" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is null" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is undefined" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is undefined" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is a string" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is a string" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is an array" name="jyson.emptyArrayValueOverride.spec template arrays defined by strings jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is an array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects must convert an object to &quot;json&quot;" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects must convert an object to &quot;json&quot;" time="0.003">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects must use the default emptyArrayValue for missing arrays" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects must use the default emptyArrayValue for missing arrays" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined" time="0.003">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is null" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is null" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is undefined" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is undefined" time="0.002">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is a string" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is a string" time="0.001">
+    </testcase>
+    <testcase classname="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is an array" name="jyson.emptyArrayValueOverride.spec template arrays defined by objects jyson.Array emptyArrayValue must use emptyArrayValue for missing arrays when emptyArrayValue is an array" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.deep.spec: a template with deep paths" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.764" tests="1">
+    <testcase classname="jyson.deep.spec: a template with deep paths must convert an object to &quot;json&quot;" name="jyson.deep.spec: a template with deep paths must convert an object to &quot;json&quot;" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.function.spec: a function in the template" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.784" tests="4">
+    <testcase classname="jyson.function.spec: a function in the template simple functions must convert an object to &quot;json&quot;" name="jyson.function.spec: a function in the template simple functions must convert an object to &quot;json&quot;" time="0.016">
+    </testcase>
+    <testcase classname="jyson.function.spec: a function in the template simple functions must call functions with the correct arguments" name="jyson.function.spec: a function in the template simple functions must call functions with the correct arguments" time="0.004">
+    </testcase>
+    <testcase classname="jyson.function.spec: a function in the template simple undefined functions must convert an object to &quot;json&quot;" name="jyson.function.spec: a function in the template simple undefined functions must convert an object to &quot;json&quot;" time="0.003">
+    </testcase>
+    <testcase classname="jyson.function.spec: a function in the template nested comments via functions must be able to use functions to create reddit style comments" name="jyson.function.spec: a function in the template nested comments via functions must be able to use functions to create reddit style comments" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.array.spec: an array in the template" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="1.075" tests="21">
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by strings simple arrays must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by strings simple arrays must convert an object to json" time="0.025">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by strings simple arrays must convert an object to json when the array is not provided" name="jyson.array.spec: an array in the template template arrays defined by strings simple arrays must convert an object to json when the array is not provided" time="0.005">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by strings complex arrays must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by strings complex arrays must convert an object to json" time="0.005">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects simple arrays must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by objects simple arrays must convert an object to json" time="0.006">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects simple arrays must handle undefined values when converting an object to json" name="jyson.array.spec: an array in the template template arrays defined by objects simple arrays must handle undefined values when converting an object to json" time="0.014">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects simple arrays must convert an object of length 10 to json" name="jyson.array.spec: an array in the template template arrays defined by objects simple arrays must convert an object of length 10 to json" time="0.034">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects complex arrays must convert an object to json of length one" name="jyson.array.spec: an array in the template template arrays defined by objects complex arrays must convert an object to json of length one" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects complex arrays must convert an object to json of length two" name="jyson.array.spec: an array in the template template arrays defined by objects complex arrays must convert an object to json of length two" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects arrays that access multiple arrays when all the arrays are the same length must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by objects arrays that access multiple arrays when all the arrays are the same length must convert an object to json" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects arrays that access multiple arrays when one of the arrays is longer than the others must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by objects arrays that access multiple arrays when one of the arrays is longer than the others must convert an object to json" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values must convert an object to json" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values must convert an object to json when the order is reversed" name="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values must convert an object to json when the order is reversed" time="0">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values for nested arrays must convert an object to json" name="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values for nested arrays must convert an object to json" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values for nested arrays must convert an object to json when the non array value does not have a length" name="jyson.array.spec: an array in the template template arrays defined by objects arrays that access non array values for nested arrays must convert an object to json when the non array value does not have a length" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must convert an object to json" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must convert an object to json" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle a missing a" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle a missing a" time="0">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle an empty a array" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle an empty a array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle an empty b array" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle an empty b array" time="0">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle an empty c array" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle an empty c array" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle a missing empty d" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must handle a missing empty d" time="0.001">
+    </testcase>
+    <testcase classname="jyson.array.spec: an array in the template template arrays of arrays of arrays must convert an object with many arrays to json" name="jyson.array.spec: an array in the template template arrays of arrays of arrays must convert an object with many arrays to json" time="0.21">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.error.spec: testing errors in jyson" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.322" tests="5">
+    <testcase classname="jyson.error.spec: testing errors in jyson must error if the template cant be parsed" name="jyson.error.spec: testing errors in jyson must error if the template cant be parsed" time="0.002">
+    </testcase>
+    <testcase classname="jyson.error.spec: testing errors in jyson arrays json template arrays must be of length 1" name="jyson.error.spec: testing errors in jyson arrays json template arrays must be of length 1" time="0.001">
+    </testcase>
+    <testcase classname="jyson.error.spec: testing errors in jyson arrays missing a $ must error in the simple case" name="jyson.error.spec: testing errors in jyson arrays missing a $ must error in the simple case" time="0.001">
+    </testcase>
+    <testcase classname="jyson.error.spec: testing errors in jyson arrays missing a $ must error in the simple case" name="jyson.error.spec: testing errors in jyson arrays missing a $ must error in the simple case" time="0.001">
+    </testcase>
+    <testcase classname="jyson.error.spec: testing errors in jyson arrays missing a $ must error with nested keys" name="jyson.error.spec: testing errors in jyson arrays missing a $ must error with nested keys" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.regression.spec: avoiding regressions" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.313" tests="1">
+    <testcase classname="jyson.regression.spec: avoiding regressions must continue to output all properties after a property that evaluates false" name="jyson.regression.spec: avoiding regressions must continue to output all properties after a property that evaluates false" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.example.spec: an example" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.3" tests="1">
+    <testcase classname="jyson.example.spec: an example must output example &quot;json&quot;" name="jyson.example.spec: an example must output example &quot;json&quot;" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="jysonValue.spec" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.31" tests="1">
+    <testcase classname="jysonValue.spec errors must error out if not path is provided" name="jysonValue.spec errors must error out if not path is provided" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.undefinedValue.spec: basic undefined" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.338" tests="6">
+    <testcase classname="jyson.undefinedValue.spec: basic undefined must handle missing basic values" name="jyson.undefinedValue.spec: basic undefined must handle missing basic values" time="0.006">
+    </testcase>
+    <testcase classname="jyson.undefinedValue.spec: basic undefined must handle missing nested values" name="jyson.undefinedValue.spec: basic undefined must handle missing nested values" time="0.003">
+    </testcase>
+    <testcase classname="jyson.undefinedValue.spec: basic undefined must handle missing function values" name="jyson.undefinedValue.spec: basic undefined must handle missing function values" time="0.002">
+    </testcase>
+    <testcase classname="jyson.undefinedValue.spec: string undefined must handle missing basic values" name="jyson.undefinedValue.spec: string undefined must handle missing basic values" time="0.001">
+    </testcase>
+    <testcase classname="jyson.undefinedValue.spec: string undefined must handle missing nested values" name="jyson.undefinedValue.spec: string undefined must handle missing nested values" time="0.001">
+    </testcase>
+    <testcase classname="jyson.undefinedValue.spec: string undefined must handle missing function values" name="jyson.undefinedValue.spec: string undefined must handle missing function values" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="jyson.undefinedOverride.spec: a basic template" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:50" time="0.306" tests="6">
+    <testcase classname="jyson.undefinedOverride.spec: a basic template must convert an object to &quot;json&quot;" name="jyson.undefinedOverride.spec: a basic template must convert an object to &quot;json&quot;" time="0.004">
+    </testcase>
+    <testcase classname="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use undefinedValue for missing objects when undefined is null" name="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use undefinedValue for missing objects when undefined is null" time="0">
+    </testcase>
+    <testcase classname="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use undefinedValue for missing objects when undefined is undefined" name="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use undefinedValue for missing objects when undefined is undefined" time="0.001">
+    </testcase>
+    <testcase classname="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use undefinedValue for missing objects when undefined is custom" name="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use undefinedValue for missing objects when undefined is custom" time="0">
+    </testcase>
+    <testcase classname="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use the default undefinedValue if no custom undefinedValue is defined" name="jyson.undefinedOverride.spec: a basic template jyson.Value undefinedValue must use the default undefinedValue if no custom undefinedValue is defined" time="0.001">
+    </testcase>
+    <testcase classname="jyson.undefinedOverride.spec: a basic template jyson.Value path must error if it encounters a json.Value thats missing a path" name="jyson.undefinedOverride.spec: a basic template jyson.Value path must error if it encounters a json.Value thats missing a path" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="jysonArray.spec" errors="0" failures="0" skipped="0" timestamp="2018-10-19T18:42:51" time="0.196" tests="1">
+    <testcase classname="jysonArray.spec errors must error out if not path is provided" name="jysonArray.spec errors must error out if not path is provided" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
