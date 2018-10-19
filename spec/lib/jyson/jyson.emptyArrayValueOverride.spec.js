@@ -42,8 +42,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
 
     describe('jyson.Array', () => {
       describe('emptyArrayValue', () => {
-        test(
-          'must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined',
+        it('must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined',
           () => {
             const input = {
               a: [1],
@@ -58,8 +57,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is null',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is null',
           () => {
             const input = {
               a: [1],
@@ -74,8 +72,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is undefined',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is undefined',
           () => {
             const input = {
               a: [1],
@@ -90,8 +87,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is a string',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is a string',
           () => {
             const input = {
               a: [1],
@@ -106,8 +102,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is an array',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is an array',
           () => {
             const input = {
               a: [1],
@@ -173,8 +168,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
 
     describe('jyson.Array', () => {
       describe('emptyArrayValue', () => {
-        test(
-          'must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined',
+        it('must use the default emptyArrayValue for missing arrays when emptyArrayValue not defined',
           () => {
             const input = {
               a: [1],
@@ -189,8 +183,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is null',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is null',
           () => {
             const input = {
               a: [1],
@@ -205,8 +198,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is undefined',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is undefined',
           () => {
             const input = {
               a: [1],
@@ -221,8 +213,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is a string',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is a string',
           () => {
             const input = {
               a: [1],
@@ -237,8 +228,7 @@ describe('jyson.emptyArrayValueOverride.spec', () => {
           }
         );
 
-        test(
-          'must use emptyArrayValue for missing arrays when emptyArrayValue is an array',
+        it('must use emptyArrayValue for missing arrays when emptyArrayValue is an array',
           () => {
             const input = {
               a: [1],

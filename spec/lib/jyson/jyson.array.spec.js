@@ -373,8 +373,7 @@ describe('jyson.array.spec: an array in the template', () => {
         expect(json.a[0].b).toBe('b');
       });
 
-      test(
-        'must convert an object to json when the non array value does not have a length',
+      it('must convert an object to json when the non array value does not have a length',
         () => {
           const input = {
             a: [{ a: 0 }, { a: 1 }],

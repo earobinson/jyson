@@ -29,8 +29,7 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
 
   describe('jyson.Value', () => {
     describe('undefinedValue', () => {
-      test(
-        'must use undefinedValue for missing objects when undefined is null',
+      it('must use undefinedValue for missing objects when undefined is null',
         () => {
           const input = {
             a: 1,
@@ -43,8 +42,7 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
         }
       );
 
-      test(
-        'must use undefinedValue for missing objects when undefined is undefined',
+      it('must use undefinedValue for missing objects when undefined is undefined',
         () => {
           const input = {
             a: 1,
@@ -57,8 +55,7 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
         }
       );
 
-      test(
-        'must use undefinedValue for missing objects when undefined is custom',
+      it('must use undefinedValue for missing objects when undefined is custom',
         () => {
           const input = {
             b: 2,
@@ -71,8 +68,7 @@ describe('jyson.undefinedOverride.spec: a basic template', () => {
         }
       );
 
-      test(
-        'must use the default undefinedValue if no custom undefinedValue is defined',
+      it('must use the default undefinedValue if no custom undefinedValue is defined',
         () => {
           const input = {
             a: 1,

@@ -10,8 +10,7 @@ describe('jyson.regression.spec: avoiding regressions', () => {
     });
   });
 
-  test(
-    'must continue to output all properties after a property that evaluates false',
+  it('must continue to output all properties after a property that evaluates false',
     () => {
       const input = {
         name: 'Bacon Peanut Butter “Ice Cream” for Dogs',
