@@ -49,8 +49,8 @@ jobs:
           path: ~/repo/.test-results
       - store_artifacts:
           path: ~/repo/.test-results
-      - store_artifacts:
-          path: ~/repo/.coverage
+      # - store_artifacts:
+      #     path: ~/repo/.coverage
 
   node-v8:
     <<: *node-base
