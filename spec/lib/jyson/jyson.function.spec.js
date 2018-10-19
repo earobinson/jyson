@@ -1,10 +1,3 @@
-const chai = require('chai');
-const sinon = require('sinon');
-const sinonChai = require('sinon-chai');
-
-const expect = chai.expect;
-chai.use(sinonChai);
-
 const jyson = require('./../../../lib/jyson');
 
 describe('jyson.function.spec: a function in the template', () => {
@@ -29,13 +22,13 @@ describe('jyson.function.spec: a function in the template', () => {
       };
       const json = this.templateFunction(input);
 
-      expect(json.a).to.equal(1);
-      expect(json.b).to.equal(2);
-      expect(json.c).to.equal(3);
+      expect(json.a).toBe(1);
+      expect(json.b).toBe(2);
+      expect(json.c).toBe(3);
     });
 
     test('must call functions with the correct arguments', () => {
-      this.templateValueFunction = sinon.stub().returns(1);
+      this.templateValueFunction = jest.fn(() => 1);
       this.templateFunction = jyson.buildTemplateFunction({
         a: this.templateValueFunction,
       });
@@ -46,9 +39,9 @@ describe('jyson.function.spec: a function in the template', () => {
       const json = this.templateFunction(input);
 
 
-      expect(json.a).to.equal(1);
-      expect(this.templateValueFunction).to.have.callCount(1);
-      expect(this.templateValueFunction).to.have.been.calledWith({
+      expect(json.a).toBe(1);
+      expect(this.templateValueFunction.mock.calls.length).toBe(1);
+      expect(this.templateValueFunction.mock.calls[0][0]).toEqual({
         key: 'a',
         object: { a: 0 },
         templateOpts: {},
@@ -78,9 +71,9 @@ describe('jyson.function.spec: a function in the template', () => {
       };
 
       const json = this.templateFunction(input);
-      expect(json.a).to.equal(1);
-      expect(json.b).to.equal(null);
-      expect(json.c).to.equal(null);
+      expect(json.a).toBe(1);
+      expect(json.b).toBe(null);
+      expect(json.c).toBe(null);
     });
   });
 
@@ -113,7 +106,7 @@ describe('jyson.function.spec: a function in the template', () => {
 
       const json = this.templateFunction(rootComments, { comments });
 
-      expect(json).to.deep.equal([
+      expect(json).toEqual([
         { commentText: '0', commentReplies: [
           { commentText: '0.1', commentReplies: [
             { commentText: '0.1.1', commentReplies: [] }

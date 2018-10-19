@@ -25,15 +25,12 @@
   "homepage": "https://github.com/hubba/jyson#readme",
   "devDependencies": {
     "@ear/eslint-config": "^1.2.0",
-    "chai": "^4.0.0",
     "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "jest": "^23.6.0",
     "jest-junit": "^5.2.0",
     "lodash.set": "^4.3.2",
-    "nyc": "^13.1.0",
-    "sinon": "^4.5.0",
-    "sinon-chai": "^2.10.0"
+    "nyc": "^13.1.0"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0",
