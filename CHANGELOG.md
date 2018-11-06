@@ -1,5 +1,8 @@
 # jyson changelog
 
+## v4.0.1
+- Updated packages
+
 ## v4.0.0
 - Adds support for jyson.Array
   - this lets a user define a global `emptyArrayValue` or a per array `emptyArrayValue`
