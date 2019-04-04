@@ -12,18 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hubba/jyson.git"
+    "url": "git+https://github.com/earobinson/jyson.git"
   },
   "keywords": [
     "json",
     "template"
   ],
-  "author": "Edward Andrew Robinson <earobinson@hubba.com>",
+  "author": "Edward Andrew Robinson <os@earobinson.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hubba/jyson/issues"
+    "url": "https://github.com/earobinson/jyson/issues"
   },
-  "homepage": "https://github.com/hubba/jyson#readme",
+  "homepage": "https://github.com/earobinson/jyson#readme",
   "devDependencies": {
     "@ear/eslint-config": "^1.2.0",
     "coveralls": "^3.0.2",
