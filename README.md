@@ -73,4 +73,4 @@ for opening issues, coding standards, and notes on development.
 
 ***
 
-Built with ❤️ at [earobinson](https://www.earobinson.com?utm_campaign=earobinson_oss).
+Built with ❤️ at [Hubba](https://www.hubba.com?utm_campaign=hubba_oss). Maintained with 💖 by [earobinson](https://earobinson.net).
