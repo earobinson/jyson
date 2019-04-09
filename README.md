@@ -3,8 +3,8 @@
 This package lets you generate fast json templates for your apis. It lets you quickly build powerful api templates.
 
 [![NPM Version](https://img.shields.io/npm/v/jyson.svg)](https://www.npmjs.com/package/jyson)
-[![Travis Build Status](https://img.shields.io/travis/hubba/jyson.svg)](https://travis-ci.org/hubba/jyson)
-[![Coveralls](https://img.shields.io/coveralls/github/hubba/jyson.svg)](https://coveralls.io/github/hubba/jyson)
+[![Travis Build Status](https://img.shields.io/travis/earobinson/jyson.svg)](https://travis-ci.org/earobinson/jyson)
+[![Coveralls](https://img.shields.io/coveralls/github/earobinson/jyson.svg)](https://coveralls.io/github/earobinson/jyson)
 [![NPM Downloads](https://img.shields.io/npm/dm/jyson.svg)](https://www.npmjs.com/package/jyson)
 
 ## Install
@@ -14,7 +14,7 @@ npm install jyson --save
 
 ## Usage
 
-jyson can create many different types of templates, for a full list of examples check out the [example tests](https://github.com/hubba/jyson/blob/master/spec/lib/jyson/jyson.example.spec.js).
+jyson can create many different types of templates, for a full list of examples check out the [example tests](https://github.com/earobinson/jyson/blob/master/spec/lib/jyson/jyson.example.spec.js).
 
 ```js
 const jyson = require('jyson');
@@ -73,4 +73,4 @@ for opening issues, coding standards, and notes on development.
 
 ***
 
-Built with ❤️ at [Hubba](https://www.hubba.com?utm_campaign=hubba_oss).
+Built with ❤️ at [earobinson](https://www.earobinson.com?utm_campaign=earobinson_oss).
