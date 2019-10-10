@@ -1,5 +1,8 @@
 # jyson changelog
 
+## v4.1.2
+- Updated packages
+
 ## v4.0.1
 - Updated packages
 
